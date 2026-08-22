@@ -1,0 +1,12 @@
+{
+	"name": "inflect",
+	"description": "A string inflection library for lua/teal",
+	"authors": [
+		"Leonard Mafeni <komemafeni944@gmail.com"
+	],
+	"git": "https://codeberg.org/kmafeni04/inflect-lua.git",
+	"branch": "main",
+	"versions": {
+		"0.1.0": "68a70b3b402504c9d02417b69bc09cf773f61a43"
+	}
+}
