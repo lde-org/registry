@@ -1,0 +1,12 @@
+{
+	"name": "kmafeni04/dotenv",
+	"description": "A .env file parser for Teal/Lua",
+	"authors": [
+		"Leonard Mafeni <komemafeni944@gmail.com>"
+	],
+	"git": "https://codeberg.org/kmafeni04/dotenv-lua.git",
+	"branch": "main",
+	"versions": {
+		"0.1.0": "82db0fb48fdd973e05ae0aff6bfdcc2751b3319f"
+	}
+}
