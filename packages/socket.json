@@ -1,0 +1,12 @@
+{
+	"name": "socket",
+	"description": "A cross platform socket library.",
+	"authors": [
+		"David Cruz <david@bycruz.dev>"
+	],
+	"git": "https://github.com/lde-org/socket.git",
+	"branch": "master",
+	"versions": {
+		"0.1.0": "390ae5651500cb250a155ae7c682c5cdbec15fb4"
+	}
+}
