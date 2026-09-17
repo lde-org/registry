@@ -1,0 +1,12 @@
+{
+	"name": "winapi",
+	"description": "Windows API bindings for LuaJIT.",
+	"authors": [
+		"David Cruz <david@bycruz.dev>"
+	],
+	"git": "https://github.com/bycruz/winapi.git",
+	"branch": "master",
+	"versions": {
+		"0.1.0": "c61a8ddf0d183e00188878d94260c184a61de9c1"
+	}
+}
