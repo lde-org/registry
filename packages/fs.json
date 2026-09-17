@@ -7,6 +7,7 @@
 	"git": "https://github.com/lde-org/fs.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "bc8342a49d667b807152ac95191f3818035d1a48"
+		"0.1.0": "bc8342a49d667b807152ac95191f3818035d1a48",
+		"0.2.0": "7babb8f41184dc80834fbf55a5528f39d6df111e"
 	}
 }
