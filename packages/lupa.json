@@ -1,0 +1,12 @@
+{
+	"name": "lupa",
+	"description": "A 2d/3d game creation framework for LuaJIT",
+	"authors": [
+		"David Cruz <david@bycruz.dev>"
+	],
+	"git": "https://github.com/bycruz/lupa.git",
+	"branch": "master",
+	"versions": {
+		"0.1.0": "9d21909371eaf71c375ae6896c5f1ed62694eae5"
+	}
+}
