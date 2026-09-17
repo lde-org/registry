@@ -1,0 +1,12 @@
+{
+	"name": "rv",
+	"description": "An incredibly minimal reverse engineering tool.",
+	"authors": [
+		"David Cruz <david@bycruz.dev>"
+	],
+	"git": "https://github.com/bycruz/revolver.git",
+	"branch": "master",
+	"versions": {
+		"0.1.0": "b0c41af126701bf2811c9c7eb43aeb3d5c6b9530"
+	}
+}
