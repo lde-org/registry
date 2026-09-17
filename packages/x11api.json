@@ -1,0 +1,12 @@
+{
+	"name": "x11api",
+	"description": "X11 api bindings for LuaJIT",
+	"authors": [
+		"David Cruz <david@bycruz.dev>"
+	],
+	"git": "https://github.com/bycruz/x11api.git",
+	"branch": "master",
+	"versions": {
+		"0.1.0": "88b328ce3564ed1f84210c44d0952f7d7ac0cb29"
+	}
+}
