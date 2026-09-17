@@ -1,0 +1,12 @@
+{
+	"name": "vkapi",
+	"description": "Cross Platform Vulkan API bindings for LuaJIT",
+	"authors": [
+		"David Cruz <david@bycruz.dev>"
+	],
+	"git": "https://github.com/bycruz/vkapi.git",
+	"branch": "master",
+	"versions": {
+		"0.1.0": "0b126912fa5ca091c940e575ecde295a3bb78429"
+	}
+}
