@@ -1,0 +1,12 @@
+{
+	"name": "glapi",
+	"description": "OpenGL api bindings for LuaJIT",
+	"authors": [
+		"David Cruz <david@bycruz.dev>"
+	],
+	"git": "https://github.com/bycruz/glapi.git",
+	"branch": "master",
+	"versions": {
+		"0.1.0": "5a0a19b36de30f6d3200dcd7c13b32cbcb19497f"
+	}
+}
