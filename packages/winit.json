@@ -1,0 +1,12 @@
+{
+	"name": "winit",
+	"description": "Cross platform windowing library for LuaJIT",
+	"authors": [
+		"David Cruz <david@bycruz.dev>"
+	],
+	"git": "https://github.com/bycruz/winit.git",
+	"branch": "master",
+	"versions": {
+		"0.1.0": "6ce1cd53c4b511f07e7c78cd2639d0107dfed56e"
+	}
+}
