@@ -1,0 +1,157 @@
+{
+	"ansicolor": {
+		"firstPublished": "2026-08-16T12:25:14Z",
+		"lastUpdated": "2026-08-30T20:13:42Z",
+		"backfilled": true
+	},
+	"archive": {
+		"firstPublished": "2026-08-16T05:28:00Z",
+		"lastUpdated": "2026-08-16T05:28:00Z",
+		"backfilled": true
+	},
+	"clap": {
+		"firstPublished": "2026-09-17T10:02:17Z",
+		"lastUpdated": "2026-09-17T10:02:17Z",
+		"backfilled": true
+	},
+	"cowsay": {
+		"firstPublished": "2026-03-15T07:52:28Z",
+		"lastUpdated": "2026-08-07T22:03:49Z",
+		"backfilled": true
+	},
+	"curl-sys": {
+		"firstPublished": "2026-08-16T05:25:17Z",
+		"lastUpdated": "2026-09-17T10:08:54Z",
+		"backfilled": true
+	},
+	"deflate-sys": {
+		"firstPublished": "2026-08-16T05:24:24Z",
+		"lastUpdated": "2026-08-16T05:24:24Z",
+		"backfilled": true
+	},
+	"dotenv": {
+		"firstPublished": "2026-08-07T21:05:49Z",
+		"lastUpdated": "2026-08-07T21:42:09Z",
+		"backfilled": true
+	},
+	"env": {
+		"firstPublished": "2026-09-17T10:07:07Z",
+		"lastUpdated": "2026-09-17T10:07:07Z",
+		"backfilled": true
+	},
+	"fs": {
+		"firstPublished": "2026-08-16T04:51:41Z",
+		"lastUpdated": "2026-09-17T10:33:33Z",
+		"backfilled": true
+	},
+	"fstrings": {
+		"firstPublished": "2026-08-16T12:23:21Z",
+		"lastUpdated": "2026-08-16T12:23:21Z",
+		"backfilled": true
+	},
+	"git2-sys": {
+		"firstPublished": "2026-08-16T05:19:31Z",
+		"lastUpdated": "2026-09-17T10:18:42Z",
+		"backfilled": true
+	},
+	"hood": {
+		"firstPublished": "2026-03-15T01:10:23Z",
+		"lastUpdated": "2026-03-15T01:10:23Z",
+		"backfilled": true
+	},
+	"html": {
+		"firstPublished": "2026-08-17T10:28:27Z",
+		"lastUpdated": "2026-08-18T14:38:25Z",
+		"backfilled": true
+	},
+	"inflect": {
+		"firstPublished": "2026-08-22T20:46:02Z",
+		"lastUpdated": "2026-08-22T20:46:02Z",
+		"backfilled": true
+	},
+	"json": {
+		"firstPublished": "2026-09-10T07:39:47Z",
+		"lastUpdated": "2026-09-10T07:39:47Z",
+		"backfilled": true
+	},
+	"kmafeni04/dotenv": {
+		"firstPublished": "2026-09-03T13:25:38Z",
+		"lastUpdated": "2026-09-03T13:25:38Z",
+		"backfilled": true
+	},
+	"lua-sys": {
+		"firstPublished": "2026-08-16T05:21:05Z",
+		"lastUpdated": "2026-08-16T05:21:05Z",
+		"backfilled": true
+	},
+	"path": {
+		"firstPublished": "2026-08-16T05:26:35Z",
+		"lastUpdated": "2026-08-16T05:26:35Z",
+		"backfilled": true
+	},
+	"process": {
+		"firstPublished": "2026-08-27T17:33:49Z",
+		"lastUpdated": "2026-08-28T05:27:11Z",
+		"backfilled": true
+	},
+	"rapidhash": {
+		"firstPublished": "2026-08-17T09:15:28Z",
+		"lastUpdated": "2026-08-18T20:30:41Z",
+		"backfilled": true
+	},
+	"rv": {
+		"firstPublished": "2026-09-17T09:50:36Z",
+		"lastUpdated": "2026-09-17T09:50:36Z",
+		"backfilled": true
+	},
+	"socket": {
+		"firstPublished": "2026-09-04T05:15:01Z",
+		"lastUpdated": "2026-09-07T20:30:30Z",
+		"backfilled": true
+	},
+	"ssdg": {
+		"firstPublished": "2026-08-15T13:15:51Z",
+		"lastUpdated": "2026-09-03T03:30:21Z",
+		"backfilled": true
+	},
+	"sstream": {
+		"firstPublished": "2026-08-15T13:16:26Z",
+		"lastUpdated": "2026-09-03T11:55:03Z",
+		"backfilled": true
+	},
+	"targs": {
+		"firstPublished": "2026-08-14T16:28:51Z",
+		"lastUpdated": "2026-08-19T02:50:59Z",
+		"backfilled": true
+	},
+	"tilt": {
+		"firstPublished": "2026-08-19T02:38:54Z",
+		"lastUpdated": "2026-08-21T23:34:18Z",
+		"backfilled": true
+	},
+	"tlrm": {
+		"firstPublished": "2026-08-26T18:20:14Z",
+		"lastUpdated": "2026-08-26T18:20:14Z",
+		"backfilled": true
+	},
+	"tltp": {
+		"firstPublished": "2026-09-02T15:34:35Z",
+		"lastUpdated": "2026-09-12T22:43:26Z",
+		"backfilled": true
+	},
+	"tltp/datastar": {
+		"firstPublished": "2026-09-08T20:09:20Z",
+		"lastUpdated": "2026-09-12T22:45:07Z",
+		"backfilled": true
+	},
+	"tltp/mail": {
+		"firstPublished": "2026-09-08T20:09:47Z",
+		"lastUpdated": "2026-09-12T22:44:23Z",
+		"backfilled": true
+	},
+	"winapi": {
+		"firstPublished": "2026-09-17T10:13:26Z",
+		"lastUpdated": "2026-09-17T10:13:26Z",
+		"backfilled": true
+	}
+}

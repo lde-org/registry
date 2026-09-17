@@ -1,0 +1,27 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Package metadata",
+	"description": "Centralized timing metadata for every package in the registry: when it was first published and when a new version was last added. Derived and maintained by the bot (generator/src/record-metadata.ts) from the registry's own git history; only repo admins may edit it directly.",
+	"type": "object",
+	"additionalProperties": {
+		"type": "object",
+		"required": ["firstPublished", "lastUpdated"],
+		"properties": {
+			"firstPublished": {
+				"type": ["string", "null"],
+				"format": "date-time",
+				"description": "When the package was first published to the registry."
+			},
+			"lastUpdated": {
+				"type": ["string", "null"],
+				"format": "date-time",
+				"description": "When a new version was last added to the package. Equal to firstPublished for a package that has never been updated."
+			},
+			"backfilled": {
+				"type": "boolean",
+				"description": "True when the dates were reconstructed from registry git history by the one-off migration (generator/src/backfill.ts) rather than recorded as packages were published."
+			}
+		},
+		"additionalProperties": false
+	}
+}

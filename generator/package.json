@@ -6,7 +6,8 @@
 	"scripts": {
 		"generate": "bun ./src/index.ts",
 		"check-pr": "bun ./src/check-pr.ts",
-		"record-owners": "bun ./src/record-owners.ts",
+		"record-metadata": "bun ./src/record-metadata.ts",
+		"backfill": "bun ./src/backfill.ts",
 		"namespace-request": "bun ./src/namespace-request.ts"
 	},
 	"devDependencies": {

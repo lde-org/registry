@@ -1,10 +1,9 @@
 name: Generate Index
 
+# Dispatched by the "Record Package Metadata" workflow after it has committed
+# last-updated.json, so the index never races the metadata update. Can also be
+# run manually.
 on:
-    push:
-        branches: [master]
-        paths:
-            - "packages/**"
     workflow_dispatch:
 
 permissions:

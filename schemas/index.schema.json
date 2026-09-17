@@ -24,7 +24,17 @@
 			},
 			"lastUpdated": {
 				"type": ["string", "null"],
-				"format": "date-time"
+				"format": "date-time",
+				"description": "When a new version was last added to this package."
+			},
+			"firstPublished": {
+				"type": ["string", "null"],
+				"format": "date-time",
+				"description": "When this package was first published to the registry."
+			},
+			"approximate": {
+				"const": true,
+				"description": "Set when the dates were reconstructed from registry history and are estimates."
 			}
 		},
 		"additionalProperties": false

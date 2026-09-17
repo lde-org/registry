@@ -6,6 +6,7 @@ on:
         paths:
             - "packages/**"
             - "authority.json"
+            - "last-updated.json"
 
 permissions:
     contents: read

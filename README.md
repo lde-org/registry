@@ -72,6 +72,40 @@ Owners are stored as arrays (a package may have several), but the bot only ever 
 
 Repo admins bypass this check and can obviously modify packages at will.
 
+### Package metadata
+
+`last-updated.json` is the registry's centralized package metadata file. For every package it records exactly two dates:
+
+```json
+{
+	"html": {
+		"firstPublished": "2026-08-17T10:28:27Z",
+		"lastUpdated": "2026-08-20T09:14:03Z"
+	}
+}
+```
+
+- `firstPublished` — when the package was first published to the registry (the "new package" date).
+- `lastUpdated` — when a new version was last added (the "updated" date). It equals `firstPublished` for a package that has never been updated.
+- `backfilled` — optional; present on entries reconstructed by the [one-off migration](#backfilling) rather than recorded as packages were published.
+
+Both dates are derived from **this repository's own history**, and only from it. A portfile changes for exactly one reason — a version was added — so the commit that last touched `packages/<name>.json` is the last update, and the commit that first added it is the first publish. That keeps the metadata authoritative without trusting anything user-submitted: portfiles still contain nothing but the fields in [the schema](schemas/registry.schema.json) (no timestamps, nothing auto-generated beyond the commit hashes), and no date ever comes from a package's own repository.
+
+Dates are taken as written and never moved backwards, so an incorrect entry can be corrected by hand, but history being rewritten cannot silently rewind the file.
+
+Only repo admins may edit `last-updated.json` directly. The bot keeps it current on every push touching `packages/**`: it refreshes entries from git history, commits the file to master, then regenerates the index. The index generator only reads this file and never runs `git log`, so the index — and the dates the website shows — cannot be invented at build time, and building it needs nothing more than the file itself.
+
+### Backfilling
+
+Packages published before the metadata file existed have no recorded dates. `generator/src/backfill.ts` reconstructs them once from registry history — the commit that first added the portfile becomes `firstPublished`, the newest commit that touched it becomes `lastUpdated` — and flags each entry with `"backfilled": true` so the website can show them as estimates:
+
+```sh
+cd generator
+bun run backfill
+```
+
+It leaves entries that were recorded live alone, so it is safe to re-run, and `--force` recomputes backfilled entries. Run it on a full clone: a shallow one would date everything to the tip commit.
+
 ### Requesting a namespace
 
 Namespaces aren't claimed through package PRs — they're requested through an issue. Open an issue containing `/request-namespace <name>` (this is what the lde website generates), and the bot will reply that a moderator must approve it. A repo moderator then comments `!approve` (or `@robolde approve`), and the bot creates the namespace in `authority.json`, assigns ownership to the issue author, and closes the issue. If the namespace already exists, the issue is closed with a notice.
@@ -82,7 +116,8 @@ Namespaces aren't claimed through package PRs — they're requested through an i
 2. **Ownership**: modifying or deleting an existing package requires its owner (for `ns/pkg`, the namespace owner) or a repo admin. New packages are claimable by whoever submits them.
 3. **Versions**: updates may not modify or remove existing versions. Exactly one new version must be added.
 4. **`authority.json`**: only repo admins may edit it directly (it is normally maintained by the bot).
-5. **New packages are never auto-merged.** The bot approves them and a maintainer merges manually; the owner is recorded on `master` right after the merge.
+5. **`last-updated.json`**: only repo admins may edit it directly (it is maintained by the bot).
+6. **New packages are never auto-merged.** The bot approves them and a maintainer merges manually; the owner is recorded on `master` right after the merge.
 
 ### Self Hosting
 

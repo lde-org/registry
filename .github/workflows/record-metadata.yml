@@ -1,4 +1,4 @@
-name: Record Package Owners
+name: Record Package Metadata
 
 on:
     push:
@@ -9,6 +9,8 @@ on:
 
 permissions:
     contents: write
+    # gh workflow run dispatches the index generation workflow.
+    actions: write
 
 jobs:
     record:
@@ -24,7 +26,7 @@ jobs:
               working-directory: generator
               run: bun install
 
-            - name: Record owners for new packages
+            - name: Record owners, first published and last updated
               working-directory: generator
               env:
                   REPO: ${{ github.repository }}
@@ -33,4 +35,13 @@ jobs:
                   # behind REGISTRY_BOT_TOKEN, then "robolde").
                   BOT_NAME: ${{ secrets.REGISTRY_BOT_NAME }}
                   BOT_EMAIL: ${{ secrets.REGISTRY_BOT_EMAIL }}
-              run: bun ./src/record-owners.ts
+              run: bun ./src/record-metadata.ts
+
+            # The index generator reads last-updated.json, so it must run after
+            # this workflow has committed it (a push-triggered index workflow
+            # could race it). Regenerate only on package pushes.
+            - name: Regenerate index
+              if: github.event_name == 'push'
+              env:
+                  GH_TOKEN: ${{ github.token }}
+              run: gh workflow run index.yml
