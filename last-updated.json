@@ -162,6 +162,10 @@
 		"lastUpdated": "2026-09-17T10:13:26Z",
 		"backfilled": true
 	},
+	"winit": {
+		"firstPublished": "2026-09-17T11:42:47Z",
+		"lastUpdated": "2026-09-17T11:42:47Z"
+	},
 	"x11api": {
 		"firstPublished": "2026-09-17T11:34:08Z",
 		"lastUpdated": "2026-09-17T11:34:08Z"
