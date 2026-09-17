@@ -1,0 +1,12 @@
+{
+	"name": "clap",
+	"description": "A minimal, lazy command line argument parser",
+	"authors": [
+		"David Cruz <david@bycruz.dev>"
+	],
+	"git": "https://github.com/lde-org/clap.git",
+	"branch": "master",
+	"versions": {
+		"0.1.0": "55ddeec2c812c7410553a6af8345614a36eef459"
+	}
+}
