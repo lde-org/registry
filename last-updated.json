@@ -149,9 +149,17 @@
 		"lastUpdated": "2026-09-12T22:44:23Z",
 		"backfilled": true
 	},
+	"vkapi": {
+		"firstPublished": "2026-09-17T11:30:12Z",
+		"lastUpdated": "2026-09-17T11:30:12Z"
+	},
 	"winapi": {
 		"firstPublished": "2026-09-17T10:13:26Z",
 		"lastUpdated": "2026-09-17T10:13:26Z",
 		"backfilled": true
+	},
+	"x11api": {
+		"firstPublished": "2026-09-17T11:34:08Z",
+		"lastUpdated": "2026-09-17T11:34:08Z"
 	}
 }
