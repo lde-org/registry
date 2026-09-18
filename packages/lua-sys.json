@@ -7,6 +7,7 @@
 	"git": "https://github.com/lde-org/lua-sys.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "9246e262d0388a744ebe2aa838fdf8a552d67755"
+		"0.1.0": "9246e262d0388a744ebe2aa838fdf8a552d67755",
+		"0.1.1": "3a9a1b1f2b18ca9cd029b66ae8935a60c208695b"
 	}
 }
