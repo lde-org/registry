@@ -1,0 +1,12 @@
+{
+	"name": "superfast",
+	"description": "An incredibly fast HTTP server in pure LuaJIT",
+	"authors": [
+		"David Cruz <david@bycruz.dev>"
+	],
+	"git": "https://github.com/bycruz/superfast.git",
+	"branch": "master",
+	"versions": {
+		"0.1.0": "5e5cb7b7418f435e2cda3638817e099794fba96f"
+	}
+}
