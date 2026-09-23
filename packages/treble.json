@@ -7,6 +7,7 @@
 	"git": "https://github.com/bycruz/treble.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "9e1c742cc2ac8662c07a7070495c39f8dcf8e0df"
+		"0.1.0": "9e1c742cc2ac8662c07a7070495c39f8dcf8e0df",
+		"0.1.1": "e87b584f9acd1ad218f044288f398eb97f8d9b38"
 	}
 }
