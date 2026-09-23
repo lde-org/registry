@@ -1,0 +1,12 @@
+{
+	"name": "treble",
+	"description": "A cross platform audio library for LuaJIT",
+	"authors": [
+		"David Cruz <david@bycruz.dev>"
+	],
+	"git": "https://github.com/bycruz/treble.git",
+	"branch": "master",
+	"versions": {
+		"0.1.0": "9e1c742cc2ac8662c07a7070495c39f8dcf8e0df"
+	}
+}
