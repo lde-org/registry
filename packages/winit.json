@@ -7,6 +7,7 @@
 	"git": "https://github.com/bycruz/winit.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "6ce1cd53c4b511f07e7c78cd2639d0107dfed56e"
+		"0.1.0": "6ce1cd53c4b511f07e7c78cd2639d0107dfed56e",
+		"0.1.1": "98ba6881f83daa554472597d593c14908496bd14"
 	}
 }
