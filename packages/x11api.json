@@ -7,6 +7,7 @@
 	"git": "https://github.com/bycruz/x11api.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "88b328ce3564ed1f84210c44d0952f7d7ac0cb29"
+		"0.1.0": "88b328ce3564ed1f84210c44d0952f7d7ac0cb29",
+		"0.1.1": "0d540e96034723bbb217c3b5f61f7e46d1b7fd23"
 	}
 }
