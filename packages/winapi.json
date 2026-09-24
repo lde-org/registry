@@ -7,6 +7,7 @@
 	"git": "https://github.com/bycruz/winapi.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "c61a8ddf0d183e00188878d94260c184a61de9c1"
+		"0.1.0": "c61a8ddf0d183e00188878d94260c184a61de9c1",
+		"0.1.1": "b3f4f26a812817818ade4dfb2ab57ed53cc8eef5"
 	}
 }
