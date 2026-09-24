@@ -7,6 +7,7 @@
 	"git": "https://github.com/lde-org/image.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "3fd988b5384058ac59d3e61348963c8b8d9f4a46"
+		"0.1.0": "3fd988b5384058ac59d3e61348963c8b8d9f4a46",
+		"0.1.1": "66def4b662bdbfe51402b341ccafd8d2c82e8ed9"
 	}
 }
