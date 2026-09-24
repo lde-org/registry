@@ -7,6 +7,7 @@
 	"git": "https://github.com/bycruz/vkapi.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "0b126912fa5ca091c940e575ecde295a3bb78429"
+		"0.1.0": "0b126912fa5ca091c940e575ecde295a3bb78429",
+		"0.1.1": "1d19f1a320ff83bfe33d20151c7d14e0472155c2"
 	}
 }
