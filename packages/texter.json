@@ -7,6 +7,7 @@
 	"git": "https://github.com/bycruz/texter.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "a0dd8c0735a3693be1dc4b723a542e29d17e998e"
+		"0.1.0": "a0dd8c0735a3693be1dc4b723a542e29d17e998e",
+		"0.1.1": "a2db37ae3d30b93c55b1a794762b1b5deea95904"
 	}
 }
