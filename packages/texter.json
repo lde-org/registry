@@ -1,0 +1,12 @@
+{
+	"name": "texter",
+	"description": "Text shaping and glyphs from what the system already has",
+	"authors": [
+		"David Cruz <david@bycruz.dev>"
+	],
+	"git": "https://github.com/bycruz/texter.git",
+	"branch": "master",
+	"versions": {
+		"0.1.0": "a0dd8c0735a3693be1dc4b723a542e29d17e998e"
+	}
+}
