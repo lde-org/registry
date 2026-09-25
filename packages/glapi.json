@@ -7,6 +7,7 @@
 	"git": "https://github.com/bycruz/glapi.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "5a0a19b36de30f6d3200dcd7c13b32cbcb19497f"
+		"0.1.0": "5a0a19b36de30f6d3200dcd7c13b32cbcb19497f",
+		"0.1.1": "ff6ede48745236b3840d53647c22dfebd72fd22c"
 	}
 }
