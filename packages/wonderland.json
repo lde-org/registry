@@ -1,0 +1,12 @@
+{
+	"name": "wonderland",
+	"description": "A cross platform UI library for LuaJIT",
+	"authors": [
+		"David Cruz <david@bycruz.dev>"
+	],
+	"git": "https://github.com/bycruz/wonderland.git",
+	"branch": "master",
+	"versions": {
+		"0.1.0": "ecf5484980888bb58d9f8df890f496c4d1539535"
+	}
+}
