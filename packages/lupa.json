@@ -7,6 +7,7 @@
 	"git": "https://github.com/bycruz/lupa.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "9d21909371eaf71c375ae6896c5f1ed62694eae5"
+		"0.1.0": "9d21909371eaf71c375ae6896c5f1ed62694eae5",
+		"0.1.1": "af2483ff3dee8918b3d413aa40accabfa47dc952"
 	}
 }
