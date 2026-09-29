@@ -1,0 +1,12 @@
+{
+	"name": "tlcat",
+	"description": "Bidirectional Teal to LuaCATS type-definition compiler",
+	"authors": [
+		"Leonard Mafeni <komemafeni944@gmail.com>"
+	],
+	"git": "https://codeberg.org/kmafeni04/tlcat.git",
+	"branch": "main",
+	"versions": {
+		"0.1.0": "a18d99a87838ec377cb9c92d4bcb2105a74e09a0"
+	}
+}
