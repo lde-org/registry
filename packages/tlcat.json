@@ -7,6 +7,7 @@
 	"git": "https://codeberg.org/kmafeni04/tlcat.git",
 	"branch": "main",
 	"versions": {
-		"0.1.0": "a18d99a87838ec377cb9c92d4bcb2105a74e09a0"
+		"0.1.0": "a18d99a87838ec377cb9c92d4bcb2105a74e09a0",
+		"0.2.0":"82d0d13299885245d355e1f74db6cb5dfc273c70"
 	}
 }
