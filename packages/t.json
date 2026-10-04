@@ -1,0 +1,12 @@
+{
+  "name": "t",
+  "description": "The only table library you will need",
+  "authors": [
+    "sysfab"
+  ],
+  "git": "https://github.com/sysfab/t.git",
+  "branch": "main",
+  "versions": {
+    "1.0.0": "247c3b9ca036297e55be866d866320ed3753f900"
+  }
+}
