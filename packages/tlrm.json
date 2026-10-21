@@ -7,6 +7,7 @@
 	"git": "https://codeberg.org/kmafeni04/tlrm.git",
 	"branch": "main",
 	"versions": {
-		"0.1.0": "5514053b9b1b8a52c190e04eca67d0f07f926606"
+		"0.1.0": "5514053b9b1b8a52c190e04eca67d0f07f926606",
+		"0.1.1": "764cdd66bddf2c5bb0c6007ed4a795582c813461"
 	}
 }
