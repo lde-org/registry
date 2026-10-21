@@ -1,1 +1,11 @@
-{"name":"tmcp","description":"An MCP server runtime for Teal with stdio and Streamable HTTP transports","authors":["Leonard Mafeni <komemafeni944@gmail.com>"],"git":"https://codeberg.org/kmafeni04/tmcp.git","branch":"main","versions":{"0.1.0":"26a3d7c40e226082eb9278b7e7af7d0f7448fc76"}}
+{
+  "name": "tmcp",
+  "description": "An MCP server runtime for Teal with stdio and Streamable HTTP transports",
+  "authors": ["Leonard Mafeni <komemafeni944@gmail.com>"],
+  "git": "https://codeberg.org/kmafeni04/tmcp.git",
+  "branch": "main",
+  "versions": {
+    "0.1.0": "26a3d7c40e226082eb9278b7e7af7d0f7448fc76",
+    "0.1.1": "b070f7f2ffd8ff451dabd2e4378bd49ce02ee8d8"
+  }
+}
