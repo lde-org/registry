@@ -7,6 +7,9 @@
 	"git": "https://github.com/SyrupStudio/dotenv.lua.git",
 	"branch": "main",
 	"versions": {
-		"1.0.1": "ff6c3e05314d9eecb739dd994a77c6ca58237672"
+		"1.0.1": {
+			"commit": "ff6c3e05314d9eecb739dd994a77c6ca58237672",
+			"sha256": "4e72a9f3fb51eb2475227f22fd6f60248393503bdc20edf2f939d03e2385cd06"
+		}
 	}
 }

@@ -7,8 +7,17 @@
 	"git": "https://github.com/lde-org/socket.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "390ae5651500cb250a155ae7c682c5cdbec15fb4",
-		"0.1.1": "459c9baf3f02a2b1b762a097ac51cbd0ef420080",
-		"0.3.0": "95b50b3bd7317bd0522cf9f048440ed7334b0978"
+		"0.1.0": {
+			"commit": "390ae5651500cb250a155ae7c682c5cdbec15fb4",
+			"sha256": "4cbc8390e8d975beead37d6dca04277afd86c5192b0b82f5d769d8df885075f6"
+		},
+		"0.1.1": {
+			"commit": "459c9baf3f02a2b1b762a097ac51cbd0ef420080",
+			"sha256": "b989e41068d0adbe23835db4c722503b85de627743f135fb6c8acd58d5e1d67e"
+		},
+		"0.3.0": {
+			"commit": "95b50b3bd7317bd0522cf9f048440ed7334b0978",
+			"sha256": "a4f30ec916e7bc1c3cdede9a0f7a03204a99582de48580399a3d4596010a4bec"
+		}
 	}
 }

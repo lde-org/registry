@@ -225,8 +225,8 @@ The bot App is not used for user login: an installation token is scoped to the r
 
 1. Set the callback URL to `https://lde.sh/api/auth/callback` (add a local URL for development).
 2. Enable **Device flow** so `lde login` works from a terminal.
-3. Set `github.clientId` in `~/.lde/config.json` (or `LDE_GITHUB_CLIENT_ID`) to the OAuth App client ID. The CLI requests `public_repo offline_access`; no client secret is stored.
-4. Set `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` as Cloudflare secrets for the website (`wrangler secret put`). `REGISTRY_REPO`, `REGISTRY_BRANCH`, and `SITE_URL` are non-secret vars in `wrangler.jsonc`.
+3. The CLI ships with the official OAuth App client ID, so users need no configuration. Override it with `github.clientId` in `~/.lde/config.json` (or `LDE_GITHUB_CLIENT_ID`) for a self-hosted app. The CLI requests `public_repo offline_access`; no client secret is stored.
+4. Set `GITHUB_CLIENT_SECRET` as a Cloudflare secret for the website (`wrangler secret put`). The client ID defaults to the official app; set `GITHUB_CLIENT_ID` only for a self-hosted app. `REGISTRY_REPO`, `REGISTRY_BRANCH`, and `SITE_URL` are non-secret vars in `wrangler.jsonc`.
 
 `public_repo` lets a signed-in user create issues and pull requests and write their own fork, which is how contributors without write access publish. The website and CLI both require two-factor authentication on the GitHub account before writing.
 

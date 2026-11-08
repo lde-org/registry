@@ -7,7 +7,13 @@
 	"git": "https://github.com/lde-org/rapidhash.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "d82cf8e578e8077165848597a09ad8f8737e1206",
-		"0.1.1": "937ef6654bd5c8afb0a3fe61593f8c2419627f89"
+		"0.1.0": {
+			"commit": "d82cf8e578e8077165848597a09ad8f8737e1206",
+			"sha256": "371e8cfa9628e6d9221a523e2f260075ddf62c0910ddc9eb20f4afed4a00284e"
+		},
+		"0.1.1": {
+			"commit": "937ef6654bd5c8afb0a3fe61593f8c2419627f89",
+			"sha256": "8407f1a2638cb455b16f803bed1c7107715e3e2bd8821edc6b3dd72303a702ff"
+		}
 	}
 }

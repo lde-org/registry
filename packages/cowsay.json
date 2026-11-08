@@ -7,7 +7,13 @@
 	"git": "https://github.com/bycruz/cowsay.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "d8a5f0a74a90f3dc20f907d18dc13ec8dc57cd9a",
-		"0.2.0": "de1ae8bfda94359608cdda0364631f382b5b39c1"
+		"0.1.0": {
+			"commit": "d8a5f0a74a90f3dc20f907d18dc13ec8dc57cd9a",
+			"sha256": "a362144ea64c2081fc804f8d3ac042505e4ac7195c566fa68ac6c1f3f7c6d6a9"
+		},
+		"0.2.0": {
+			"commit": "de1ae8bfda94359608cdda0364631f382b5b39c1",
+			"sha256": "d6e15fcbb9f6623dccb5e08915b0777e94e5843e0557831dc8ea0dccaac41e9a"
+		}
 	}
 }

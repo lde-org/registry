@@ -7,8 +7,17 @@
 	"git": "https://codeberg.org/kmafeni04/tlcat.git",
 	"branch": "main",
 	"versions": {
-		"0.1.0": "a18d99a87838ec377cb9c92d4bcb2105a74e09a0",
-		"0.2.0":"82d0d13299885245d355e1f74db6cb5dfc273c70",
-		"0.2.1": "0fc5b021b70dee34dc53cdc1960bcb45693b4966"
+		"0.1.0": {
+			"commit": "a18d99a87838ec377cb9c92d4bcb2105a74e09a0",
+			"sha256": "f55bb7a573772c510322a48e6c5746997eaf73bc64571eb85aac14e78b05801f"
+		},
+		"0.2.0": {
+			"commit": "82d0d13299885245d355e1f74db6cb5dfc273c70",
+			"sha256": "f28983f2a78bcfc95e79fab82ed5cb5f4b440b63481fbbbd216f6bdf4ae287cb"
+		},
+		"0.2.1": {
+			"commit": "0fc5b021b70dee34dc53cdc1960bcb45693b4966",
+			"sha256": "bbecd5c116229a6b88e76bb2ee82401314e670513a8ccc9e3dbdc3768b2db19c"
+		}
 	}
 }

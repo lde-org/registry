@@ -1,10 +1,15 @@
 {
-  "name": "utf8",
-  "description": "A fast, lean UTF-8 library for LuaJIT, with FFI acceleration and a Windows-native codec path.",
-  "authors": ["David Cruz <david@bycruz.dev>"],
-  "git": "https://github.com/lde-org/utf8.git",
-  "branch": "master",
-  "versions": {
-    "0.1.0": "857f7dc99f3dcf970ed6f693953b02310c96f561"
-  }
+	"name": "utf8",
+	"description": "A fast, lean UTF-8 library for LuaJIT, with FFI acceleration and a Windows-native codec path.",
+	"authors": [
+		"David Cruz <david@bycruz.dev>"
+	],
+	"git": "https://github.com/lde-org/utf8.git",
+	"branch": "master",
+	"versions": {
+		"0.1.0": {
+			"commit": "857f7dc99f3dcf970ed6f693953b02310c96f561",
+			"sha256": "7816c24519cf959658d29cb9625777febb812422e6fd312884d131a44025630a"
+		}
+	}
 }

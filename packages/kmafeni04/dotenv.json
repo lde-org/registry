@@ -7,6 +7,9 @@
 	"git": "https://codeberg.org/kmafeni04/dotenv-lua.git",
 	"branch": "main",
 	"versions": {
-		"0.1.0": "82db0fb48fdd973e05ae0aff6bfdcc2751b3319f"
+		"0.1.0": {
+			"commit": "82db0fb48fdd973e05ae0aff6bfdcc2751b3319f",
+			"sha256": "6271371147a6576d560cfd6cdebf49e15fbcace839612b1762c1ed6a807c9269"
+		}
 	}
 }

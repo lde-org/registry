@@ -7,12 +7,33 @@
 	"git": "https://github.com/lde-org/fs.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "bc8342a49d667b807152ac95191f3818035d1a48",
-		"0.2.0": "7babb8f41184dc80834fbf55a5528f39d6df111e",
-		"0.2.1": "c52fd12402518db5a1f41f4a189b8376261790d9",
-		"0.3.0": "54160bc07dd1afedbf449843f1564bfbd6b82960",
-		"0.3.1": "e03acd98e0704fc09819d17deee05c9b418bf4e1",
-		"0.3.2": "bbd32e1e24126dda375f26bf28eee3df7552fe32",
-		"0.3.3": "1eb37f6c375066d84b7a308e288f07ff2cfdd906"
+		"0.1.0": {
+			"commit": "bc8342a49d667b807152ac95191f3818035d1a48",
+			"sha256": "cc145ea3c8df1635d47ddac42528d02ae06010b759e51237d4b525cded01a3c5"
+		},
+		"0.2.0": {
+			"commit": "7babb8f41184dc80834fbf55a5528f39d6df111e",
+			"sha256": "e39418dc568c6bc2349314dc9e20bb5fc7fd7decbb2257e20db90b9186561315"
+		},
+		"0.2.1": {
+			"commit": "c52fd12402518db5a1f41f4a189b8376261790d9",
+			"sha256": "fca969549ca023e8056f43489085bbb36fa6886fd59d90cab323e1647b570f34"
+		},
+		"0.3.0": {
+			"commit": "54160bc07dd1afedbf449843f1564bfbd6b82960",
+			"sha256": "0de9a542b24198c42e2453633d0efa844893ab5ce23be39cc5298daaf56b7509"
+		},
+		"0.3.1": {
+			"commit": "e03acd98e0704fc09819d17deee05c9b418bf4e1",
+			"sha256": "e7dc11577e8e22bf55529a6d48131cdd3a21cac0a0cb0d3bbf1c012e52489b10"
+		},
+		"0.3.2": {
+			"commit": "bbd32e1e24126dda375f26bf28eee3df7552fe32",
+			"sha256": "349b422069f750888c7f75faea29bded49c64ef0704c3e58e6687214afda16fe"
+		},
+		"0.3.3": {
+			"commit": "1eb37f6c375066d84b7a308e288f07ff2cfdd906",
+			"sha256": "9ee4920afc2333b8b58739f37fe691deacdd552fd01cca6aac2ac4d13dce789f"
+		}
 	}
 }

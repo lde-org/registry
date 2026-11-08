@@ -7,10 +7,25 @@
 	"git": "https://github.com/bycruz/treble.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "9e1c742cc2ac8662c07a7070495c39f8dcf8e0df",
-		"0.1.1": "e87b584f9acd1ad218f044288f398eb97f8d9b38",
-		"0.2.0": "970dff2f9d9fde6bdff92c1a3d3503c9ca5b7ded",
-		"0.2.1": "c057770f90bd40f02cca36c93cd9641d1cc63111",
-		"0.2.2": "4632536c9fe8013c511b7827014b40917b531e0a"
+		"0.1.0": {
+			"commit": "9e1c742cc2ac8662c07a7070495c39f8dcf8e0df",
+			"sha256": "c4f881ef734df191c34ba8a6045f700bc5f3620e45c8ee749c117daebd7f502d"
+		},
+		"0.1.1": {
+			"commit": "e87b584f9acd1ad218f044288f398eb97f8d9b38",
+			"sha256": "9560f4e0582dfcb48717442ea93945cf8472a20f4566f4b9cffb071775caa2bf"
+		},
+		"0.2.0": {
+			"commit": "970dff2f9d9fde6bdff92c1a3d3503c9ca5b7ded",
+			"sha256": "af9e44ff5417a229c2d9803701d31ba2f90a80192bae5c6f7c9e51c9305e0560"
+		},
+		"0.2.1": {
+			"commit": "c057770f90bd40f02cca36c93cd9641d1cc63111",
+			"sha256": "71897bfa53043657c8dcfcb045741f1c5180d586d29df6b9fff1471f6c95452f"
+		},
+		"0.2.2": {
+			"commit": "4632536c9fe8013c511b7827014b40917b531e0a",
+			"sha256": "2a692dea28be84e1f6e9e78898ec4cd8f78caee9c0edb49f313f16c4d2c597a4"
+		}
 	}
 }

@@ -7,6 +7,9 @@
 	"git": "https://github.com/lde-org/deflate-sys.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "1b21099dc1b439bb7bf116db44ca4a4ebd2d0ffc"
+		"0.1.0": {
+			"commit": "1b21099dc1b439bb7bf116db44ca4a4ebd2d0ffc",
+			"sha256": "a2e514d6e4907b95e7f79acc63caa6a6677dc5cc623b8eaa0b54fb487313958d"
+		}
 	}
 }

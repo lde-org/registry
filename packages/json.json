@@ -7,7 +7,13 @@
 	"git": "https://github.com/lde-org/json.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "05d08771500ed909a8022b68f98e0c698acf53fc",
-		"0.1.1": "2fea69eede30788e33a436c60784c4790eb74105"
+		"0.1.0": {
+			"commit": "05d08771500ed909a8022b68f98e0c698acf53fc",
+			"sha256": "db41a77211b7b38d1d5f4e07fb3c4e405a95642c4501698c3f5822cd51f84d89"
+		},
+		"0.1.1": {
+			"commit": "2fea69eede30788e33a436c60784c4790eb74105",
+			"sha256": "66589e6d7df49af6d32da93422b9cbf8db52b2faa0e2c970b77c36fb3a193d21"
+		}
 	}
 }

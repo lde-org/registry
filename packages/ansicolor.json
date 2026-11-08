@@ -7,9 +7,21 @@
 	"git": "https://codeberg.org/kmafeni04/ansicolor-lua.git",
 	"branch": "main",
 	"versions": {
-		"0.2.0": "f7197f5f02b4fa12acb98e4d467820f4ccf4d5ac",
-		"0.2.1": "dbcfec4e228acd74aa014bc6add94b8c94789d20",
-		"0.3.0": "af88dd77342ca0bb0c84e0cf359b4f32a05df32a",
-		"0.4.0": "eecd4655737d62b7c68a3400dc04760e186ec015"
+		"0.2.0": {
+			"commit": "f7197f5f02b4fa12acb98e4d467820f4ccf4d5ac",
+			"sha256": "ea7159e3bebdf6b232d1e0239e565153aebf0be2228963ef42569e5acb811f33"
+		},
+		"0.2.1": {
+			"commit": "dbcfec4e228acd74aa014bc6add94b8c94789d20",
+			"sha256": "17bafe74545cd90b9434954c0d10dc1628d0475f1c9366197c9ebed9594fa75c"
+		},
+		"0.3.0": {
+			"commit": "af88dd77342ca0bb0c84e0cf359b4f32a05df32a",
+			"sha256": "d559a0abe27b96e3f37c9b2dfdea6b679f370376d74e58303f3a8297dd3b004e"
+		},
+		"0.4.0": {
+			"commit": "eecd4655737d62b7c68a3400dc04760e186ec015",
+			"sha256": "6b7c75db84154e35c05f9bc9350922a2f091b479d26213c0d6bb6afc6f4f72df"
+		}
 	}
 }

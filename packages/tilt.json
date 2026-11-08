@@ -7,10 +7,25 @@
 	"git": "https://codeberg.org/kmafeni04/tilt.git",
 	"branch": "main",
 	"versions": {
-		"0.1.0": "f53703b11c349b5bce24f5b56c4b5ca3d1a5d0bc",
-        "0.1.1": "51684575ed1b441a3175011348f022b56ee06c5c",
-		"0.1.2": "3b717d2bcd8f73dd209b8c790ea410b584cf5715",
-		"0.2.0": "3111299eea2473d484307806ac15869bdc0a4eb2",
-		"0.2.1": "e1e490491176f629539f7900f58fd85c24b3967b"
+		"0.1.0": {
+			"commit": "f53703b11c349b5bce24f5b56c4b5ca3d1a5d0bc",
+			"sha256": "f537448b38ca6cc15ac300912dcbbdc657021d14a67b04ae61838f9ef732bc71"
+		},
+		"0.1.1": {
+			"commit": "51684575ed1b441a3175011348f022b56ee06c5c",
+			"sha256": "3b67aee7d0597b88707258b05245f1f99ca2b7a9a37dfe9d98a75399b802afd1"
+		},
+		"0.1.2": {
+			"commit": "3b717d2bcd8f73dd209b8c790ea410b584cf5715",
+			"sha256": "1e27232cea8fc4ddab1b4b8839fe4132fa4913a1ddaeeb6583158800ad6ad4f2"
+		},
+		"0.2.0": {
+			"commit": "3111299eea2473d484307806ac15869bdc0a4eb2",
+			"sha256": "1ecc138c2e341ff9dbce2666f633f4ec5bba4e23490c8290a5415fc27f7ebc6b"
+		},
+		"0.2.1": {
+			"commit": "e1e490491176f629539f7900f58fd85c24b3967b",
+			"sha256": "b396c6cfca3005af8b557eb60a3e490c4dcaabd28f355b5c954acbedeb2d09a1"
+		}
 	}
 }

@@ -7,18 +7,57 @@
 	"git": "https://github.com/bycruz/hood.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "5d4bb28703d8f1c17a0e241810145194a51042f0",
-		"0.1.1": "6622c4a119ac92e23c2de8eeec82c27095787aa4",
-		"0.1.2": "f6d61f3a13f37445afbf5bf06e5f8390cd31dfaa",
-		"0.1.3": "31722c0bc5c818cf0d3b29ccadcf9a04b1a86164",
-		"0.2.0": "b6f8f18540ef90e6db1accb8c734b90de01fbdeb",
-		"0.2.1": "845f1dba639e862eb665d218efdeed3b182102b5",
-		"0.2.2": "f13e942ff3ee07d60c4d540c746cb8edae434c13",
-		"0.2.3": "97310c243008336277541b25c89791232279608a",
-		"0.2.4": "82a1026e4e36f1fd0636174e4dc520b539138d9f",
-		"0.2.5": "4ff78c10c8f4fbca901d940e3cfec0d0131dc369",
-		"0.2.6": "ca67fe9daadd489ba078e19479bb8f68ae13e20a",
-		"0.2.7": "7f89de48ce664247f2687cffe952f46ac4793212",
-		"0.2.8": "30c6963a983267593bdd829bb9c462a7af45ea1b"
+		"0.1.0": {
+			"commit": "5d4bb28703d8f1c17a0e241810145194a51042f0",
+			"sha256": "59193072dae56a10f1e2e8b065b96c18f23358fecb266cd0f399082b4ebf063b"
+		},
+		"0.1.1": {
+			"commit": "6622c4a119ac92e23c2de8eeec82c27095787aa4",
+			"sha256": "111a49c299c374ef6f46ae03d9c0a19fc0d3accf4337e621e1e8de60d720b9a0"
+		},
+		"0.1.2": {
+			"commit": "f6d61f3a13f37445afbf5bf06e5f8390cd31dfaa",
+			"sha256": "afefd00688ed38286a5b7553f09148018503ed726ed66dad4d906c6e37329cfc"
+		},
+		"0.1.3": {
+			"commit": "31722c0bc5c818cf0d3b29ccadcf9a04b1a86164",
+			"sha256": "7415584767927ea317fbe84d37f11fc7f2e56f9e7023337c02bb67212ee44d85"
+		},
+		"0.2.0": {
+			"commit": "b6f8f18540ef90e6db1accb8c734b90de01fbdeb",
+			"sha256": "e3297059f6be0b287e5fe4f4a42cda07ce6cc76183d985ce32f1a0bfe4a3d502"
+		},
+		"0.2.1": {
+			"commit": "845f1dba639e862eb665d218efdeed3b182102b5",
+			"sha256": "b40f1cd75750b0f9d876ace0927750816eb001c8b206ebfde942b01a4ae72300"
+		},
+		"0.2.2": {
+			"commit": "f13e942ff3ee07d60c4d540c746cb8edae434c13",
+			"sha256": "9dd737065fda09c929ea2ccb375227764dd0a09f890df4b5d2021d94a34178db"
+		},
+		"0.2.3": {
+			"commit": "97310c243008336277541b25c89791232279608a",
+			"sha256": "2dd95d434c76f97abd25f04865a7d86e08a481f74e1479274ce6ffe3e5efd46b"
+		},
+		"0.2.4": {
+			"commit": "82a1026e4e36f1fd0636174e4dc520b539138d9f",
+			"sha256": "80e13c2740386643584123666b1a062edb5b310ea919d7f28439f4c03ce7417e"
+		},
+		"0.2.5": {
+			"commit": "4ff78c10c8f4fbca901d940e3cfec0d0131dc369",
+			"sha256": "1b13fdf81cad9d6264bb03f611f138fb887b2ff292efa6e44d09891e052d5bf7"
+		},
+		"0.2.6": {
+			"commit": "ca67fe9daadd489ba078e19479bb8f68ae13e20a",
+			"sha256": "6e79af90e0bed4172e6ed50c3611e8e1f08ac0b60647f1924fd2f9f3461f02af"
+		},
+		"0.2.7": {
+			"commit": "7f89de48ce664247f2687cffe952f46ac4793212",
+			"sha256": "18c6de4b9a55a4e03726545fab28abb235fb53c2efd31ae86b94e3407e7e7525"
+		},
+		"0.2.8": {
+			"commit": "30c6963a983267593bdd829bb9c462a7af45ea1b",
+			"sha256": "fa32989822adf04d2fcc8f5f4475a401822aebd09d1464b3b6842500f2a7cbd0"
+		}
 	}
 }

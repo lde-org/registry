@@ -7,6 +7,9 @@
 	"git": "https://github.com/lde-org/archive.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "fffd1657ec146b136f4416a297faa6af59ebeeaa"
+		"0.1.0": {
+			"commit": "fffd1657ec146b136f4416a297faa6af59ebeeaa",
+			"sha256": "2ec0d9d46b7b18b0c63d37ffed93de6bbfe1d7c742b9d731b345bedaaec871b2"
+		}
 	}
 }

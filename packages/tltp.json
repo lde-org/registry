@@ -7,12 +7,33 @@
 	"git": "https://codeberg.org/kmafeni04/tltp.git",
 	"branch": "main",
 	"versions": {
-		"0.1.0": "af639f410282cea7f6f362fd8e1d24e773127353",
-		"0.2.0": "ba18a31c85628a320ad02efa3462536f034448da",
-		"0.3.0": "108dd1d793cad6cb7a9f025a75be5a3b66760a79",
-		"0.3.1": "e3c26cc1d25d3442583669fc7086b12be714bfa8",
-		"0.3.2": "13fa639e67b7e8ca695fb002ed6ab1323b6efe4e",
-		"0.3.3": "6d48ce9d039783ba19b8fd5de5e65ec4d99b36b1",
-		"0.3.4": "63b84bb3dafe709fe1a074c5a3084814473110cd"
+		"0.1.0": {
+			"commit": "af639f410282cea7f6f362fd8e1d24e773127353",
+			"sha256": "38464e37b5c048e3040474678ea2303e153017496230454048dd3f6b3fc74521"
+		},
+		"0.2.0": {
+			"commit": "ba18a31c85628a320ad02efa3462536f034448da",
+			"sha256": "9cad6252e79a432af4fe081f282f4fa0a9f667e17a4456f6ea3384ab4387325e"
+		},
+		"0.3.0": {
+			"commit": "108dd1d793cad6cb7a9f025a75be5a3b66760a79",
+			"sha256": "6ad3b5f28a1f9bf18b682a93f84ecda23f03378d7214b4e26833a49fdd0a3e81"
+		},
+		"0.3.1": {
+			"commit": "e3c26cc1d25d3442583669fc7086b12be714bfa8",
+			"sha256": "7d9367f0a870b3ad26355c37b5b25ec42ad2e568505f69e68335e33a07f2248c"
+		},
+		"0.3.2": {
+			"commit": "13fa639e67b7e8ca695fb002ed6ab1323b6efe4e",
+			"sha256": "1cf2a075a0bac9cfc37a4c1b1c8d697378e8c0d30ad09b6cb988a467bab966cd"
+		},
+		"0.3.3": {
+			"commit": "6d48ce9d039783ba19b8fd5de5e65ec4d99b36b1",
+			"sha256": "a6f00edaa45d7841e33593f4a32c3cb43a126f42dec78bdcb891a5dc3d032443"
+		},
+		"0.3.4": {
+			"commit": "63b84bb3dafe709fe1a074c5a3084814473110cd",
+			"sha256": "97a33856400d4570e7b846514f0bd407ef2ae82a51b00ed7ea13c5404918efce"
+		}
 	}
 }

@@ -7,7 +7,13 @@
 	"git": "https://github.com/bycruz/superfast.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "5e5cb7b7418f435e2cda3638817e099794fba96f",
-		"0.1.1": "62e742759c838db54210a16c4f7476ec97a8154a"
+		"0.1.0": {
+			"commit": "5e5cb7b7418f435e2cda3638817e099794fba96f",
+			"sha256": "f5e81ea0edd86f9366fdbb3a3b7b8490b2f1b29f445c45aa3b7a17edb13fd41d"
+		},
+		"0.1.1": {
+			"commit": "62e742759c838db54210a16c4f7476ec97a8154a",
+			"sha256": "60c399d4825a757c18baab32b9d58f61fa1784973f25e3cf6859195250126084"
+		}
 	}
 }

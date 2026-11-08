@@ -7,8 +7,17 @@
 	"git": "https://github.com/lde-org/curl-sys.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "9e7056980a20f2acb1a9785d1433897201ceb1fb",
-		"0.1.1": "ca154c1ed733dd2bc884160929b56627432501ff",
-		"0.1.2": "5308c3d3f8e5689f19526f84ea671baae9cf0f41"
+		"0.1.0": {
+			"commit": "9e7056980a20f2acb1a9785d1433897201ceb1fb",
+			"sha256": "3f3fb9b33b79d96f35f0d0b36013c3d62c358a6fbc33a94b4e6bb0daaca77e82"
+		},
+		"0.1.1": {
+			"commit": "ca154c1ed733dd2bc884160929b56627432501ff",
+			"sha256": "a8ed9057abe325bac74decfc6eb7f9fbbf3f5528a3279eba3e491dea240839e6"
+		},
+		"0.1.2": {
+			"commit": "5308c3d3f8e5689f19526f84ea671baae9cf0f41",
+			"sha256": "2c7a6de4e520b447d740c58034459ca57d29c4ac47c45c7607da22e59cc61c3c"
+		}
 	}
 }
