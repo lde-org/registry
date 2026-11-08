@@ -25,7 +25,7 @@ jobs:
               id: app
               uses: actions/create-github-app-token@v3
               with:
-                  app-id: ${{ vars.REGISTRY_APP_ID }}
+                  client-id: ${{ vars.REGISTRY_APP_CLIENT_ID || vars.REGISTRY_APP_ID }}
                   private-key: ${{ secrets.REGISTRY_APP_PRIVATE_KEY }}
 
             # pull_request_target runs in the base repo context (so secrets are
@@ -38,6 +38,8 @@ jobs:
                   token: ${{ steps.app.outputs.token }}
 
             - uses: lde-org/setup-lde@v2
+              with:
+                  version: nightly
 
             - name: Fetch PR head
               env:

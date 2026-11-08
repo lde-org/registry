@@ -31,7 +31,7 @@ jobs:
               id: app
               uses: actions/create-github-app-token@v3
               with:
-                  app-id: ${{ vars.REGISTRY_APP_ID }}
+                  client-id: ${{ vars.REGISTRY_APP_CLIENT_ID || vars.REGISTRY_APP_ID }}
                   private-key: ${{ secrets.REGISTRY_APP_PRIVATE_KEY }}
 
             - uses: actions/checkout@v6
@@ -40,6 +40,8 @@ jobs:
                   fetch-depth: 0
 
             - uses: lde-org/setup-lde@v2
+              with:
+                  version: nightly
 
             - name: Validate script path
               env:
