@@ -1,0 +1,87 @@
+name: Run Migration
+
+# Manual data migrations only. Scripts are never run automatically on push.
+# The filename convention is YYYY-MM-DD-<slug>.lua so a directory listing is
+# chronological. Each script must be idempotent and support --dry-run.
+on:
+    workflow_dispatch:
+        inputs:
+            script:
+                description: "Migration script under scripts/ (YYYY-MM-DD-*.lua)"
+                required: true
+                type: string
+            dry_run:
+                description: "Compute changes without writing or committing"
+                required: false
+                default: false
+                type: boolean
+
+permissions:
+    contents: write
+
+concurrency:
+    group: migration
+    cancel-in-progress: false
+
+jobs:
+    migrate:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Create GitHub App token
+              id: app
+              uses: actions/create-github-app-token@v2
+              with:
+                  app-id: ${{ vars.REGISTRY_APP_ID }}
+                  private-key: ${{ secrets.REGISTRY_APP_PRIVATE_KEY }}
+
+            - uses: actions/checkout@v4
+              with:
+                  token: ${{ steps.app.outputs.token }}
+                  fetch-depth: 0
+
+            - uses: lde-org/setup-lde@v1
+
+            - name: Validate script path
+              env:
+                  SCRIPT: ${{ inputs.script }}
+              run: |
+                  case "$SCRIPT" in
+                      scripts/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]-*.lua) ;;
+                      *)
+                          echo "::error::script must match scripts/YYYY-MM-DD-*.lua"
+                          exit 1
+                          ;;
+                  esac
+                  test -f "$SCRIPT" || {
+                      echo "::error::missing $SCRIPT"
+                      exit 1
+                  }
+
+            - name: Run migration
+              env:
+                  SCRIPT: ${{ inputs.script }}
+                  DRY_RUN: ${{ inputs.dry_run }}
+              run: |
+                  args=()
+                  if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); fi
+                  lde run "$SCRIPT" -- "${args[@]}"
+
+            - name: Test
+              run: lde test
+
+            - name: Commit and push
+              if: inputs.dry_run == false
+              env:
+                  SCRIPT: ${{ inputs.script }}
+                  BOT_NAME: ${{ secrets.REGISTRY_BOT_NAME }}
+                  BOT_EMAIL: ${{ secrets.REGISTRY_BOT_EMAIL }}
+              run: |
+                  git config user.name "${BOT_NAME:-robolde}"
+                  git config user.email "${BOT_EMAIL:-robolde@users.noreply.github.com}"
+                  git add packages/ authority.json last-updated.json
+                  if git diff --cached --quiet; then
+                      echo "No changes."
+                      exit 0
+                  fi
+                  git commit -m "Run migration ${SCRIPT##*/}"
+                  git push origin HEAD:master

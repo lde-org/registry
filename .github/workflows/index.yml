@@ -13,20 +13,25 @@ jobs:
     generate:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v4
-            - uses: oven-sh/setup-bun@v2
+            - name: Create GitHub App token
+              id: app
+              uses: actions/create-github-app-token@v2
+              with:
+                  app-id: ${{ vars.REGISTRY_APP_ID }}
+                  private-key: ${{ secrets.REGISTRY_APP_PRIVATE_KEY }}
 
-            - name: Install dependencies
-              working-directory: generator
-              run: bun install
+            - uses: actions/checkout@v4
+              with:
+                  token: ${{ steps.app.outputs.token }}
+
+            - uses: lde-org/setup-lde@v1
 
             - name: Generate index.json
-              run: bun run generate
-              working-directory: generator
+              run: lde run src/generate-index.lua
 
             - name: Deploy to dist branch
               uses: peaceiris/actions-gh-pages@v4
               with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  github_token: ${{ steps.app.outputs.token }}
                   publish_branch: dist
-                  publish_dir: generator/dist
+                  publish_dir: dist

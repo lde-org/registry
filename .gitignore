@@ -1,1 +1,9 @@
-index.json
+# Build output
+dist/
+target/
+
+# Editor / tooling caches
+.lde/
+*.log
+.lye
+lde.lock

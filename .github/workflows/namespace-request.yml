@@ -22,20 +22,23 @@ jobs:
              (contains(github.event.comment.body, '!approve') || contains(github.event.comment.body, '@robolde')))
         runs-on: ubuntu-latest
         steps:
+            - name: Create GitHub App token
+              id: app
+              uses: actions/create-github-app-token@v2
+              with:
+                  app-id: ${{ vars.REGISTRY_APP_ID }}
+                  private-key: ${{ secrets.REGISTRY_APP_PRIVATE_KEY }}
+
             - uses: actions/checkout@v4
               with:
                   fetch-depth: 0
+                  token: ${{ steps.app.outputs.token }}
 
-            - uses: oven-sh/setup-bun@v2
-
-            - name: Install dependencies
-              working-directory: generator
-              run: bun install
+            - uses: lde-org/setup-lde@v1
 
             - name: Handle namespace request
-              working-directory: generator
               env:
-                  GH_TOKEN: ${{ secrets.REGISTRY_BOT_TOKEN }}
+                  GH_TOKEN: ${{ steps.app.outputs.token }}
                   EVENT: ${{ github.event_name }}
                   REPO: ${{ github.repository }}
                   ISSUE_NUMBER: ${{ github.event.issue.number }}
@@ -45,5 +48,6 @@ jobs:
                   COMMENT_BODY: ${{ github.event.comment.body }}
                   COMMENT_AUTHOR_LOGIN: ${{ github.event.comment.user.login }}
                   COMMENT_AUTHOR_ASSOCIATION: ${{ github.event.comment.author_association }}
-              run: |
-                  bun ./src/namespace-request.ts
+                  BOT_NAME: ${{ secrets.REGISTRY_BOT_NAME }}
+                  BOT_EMAIL: ${{ secrets.REGISTRY_BOT_EMAIL }}
+              run: lde run src/namespace-request.lua

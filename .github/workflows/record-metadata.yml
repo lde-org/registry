@@ -3,6 +3,8 @@ name: Record Package Metadata
 on:
     push:
         branches: [master]
+        # Only package changes trigger this workflow. Its own commit touches
+        # authority.json / last-updated.json, so it cannot trigger itself.
         paths:
             - "packages/**"
     workflow_dispatch:
@@ -16,26 +18,30 @@ jobs:
     record:
         runs-on: ubuntu-latest
         steps:
+            - name: Create GitHub App token
+              id: app
+              uses: actions/create-github-app-token@v2
+              with:
+                  app-id: ${{ vars.REGISTRY_APP_ID }}
+                  private-key: ${{ secrets.REGISTRY_APP_PRIVATE_KEY }}
+
             - uses: actions/checkout@v4
               with:
                   fetch-depth: 0
+                  token: ${{ steps.app.outputs.token }}
 
-            - uses: oven-sh/setup-bun@v2
-
-            - name: Install dependencies
-              working-directory: generator
-              run: bun install
+            - uses: lde-org/setup-lde@v1
 
             - name: Record owners, first published and last updated
-              working-directory: generator
               env:
                   REPO: ${{ github.repository }}
-                  GH_TOKEN: ${{ secrets.REGISTRY_BOT_TOKEN }}
-                  # Optional: override the commit author (defaults to the account
-                  # behind REGISTRY_BOT_TOKEN, then "robolde").
+                  GH_TOKEN: ${{ steps.app.outputs.token }}
+                  # Optional: override the commit author. An App installation
+                  # token cannot resolve /user, so set these to attribute the
+                  # bot's commits to a real account.
                   BOT_NAME: ${{ secrets.REGISTRY_BOT_NAME }}
                   BOT_EMAIL: ${{ secrets.REGISTRY_BOT_EMAIL }}
-              run: bun ./src/record-metadata.ts
+              run: lde run src/record-metadata.lua
 
             # The index generator reads last-updated.json, so it must run after
             # this workflow has committed it (a push-triggered index workflow

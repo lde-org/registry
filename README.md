@@ -1,6 +1,6 @@
 # lde-org/registry
 
-This repository contains the registry for LDE.
+This repository contains the registry for lde.
 
 ## How it works
 
@@ -39,6 +39,7 @@ Names follow these rules (applied to both the namespace and package parts):
 	"name": "hood",
 	"description": "Cross-platform rendering in pure LuaJIT.",
 	"authors": ["David Cruz <codebycruz@gmail.com>"],
+	"tags": ["rendering", "graphics"],
 	"git": "https://github.com/codebycruz/hood",
 	"branch": "master",
 	"versions": {
@@ -47,15 +48,104 @@ Names follow these rules (applied to both the namespace and package parts):
 }
 ```
 
+`tags` is an optional list of up to 10 unique, lowercase tags (`a-z`, digits and
+`-`, at most 32 characters) used by clients to categorize packages.
+
+Version objects store only what differs from the top-level source. A normal
+hash-pinned git version is `{ "commit": "...", "sha256": "..." }`; `git` and
+`branch` appear only when that version moved to another repository or branch.
+
+A version normally resolves to a 40-character lowercase commit hash in the
+portfile's `git`/`branch`. When a release lives in a different repository or
+branch, that version can carry its own source instead. New git versions also
+carry a `sha256` of the archive clients download, so a changed source server is
+detected before extraction:
+
+```json
+{
+	"versions": {
+		"0.1.0": "5d4bb28703d8f1c17a0e241810145194a51042f0",
+		"0.2.0": {
+			"commit": "0123456789abcdef0123456789abcdef01234567",
+			"git": "https://github.com/codebycruz/hood-next",
+			"branch": "main",
+			"sha256": "9f2c4e8a7b6d5c3e1f0a9b8c7d6e5f4a3b2c1d0e9f8a7b6c5d4e3f2a1b0c9d8e"
+		}
+	}
+}
+```
+
+A version can also be a hash-pinned tarball instead of a git commit. In that
+case the top-level `git` is optional and every version must name an archive:
+
+```json
+{
+	"name": "hood",
+	"versions": {
+		"1.0.0": {
+			"archive": "https://github.com/codebycruz/hood/releases/download/v1.0.0/hood-1.0.0.tar.gz",
+			"sha256": "9f2c4e8a7b6d5c3e1f0a9b8c7d6e5f4a3b2c1d0e9f8a7b6c5d4e3f2a1b0c9d8e"
+		}
+	}
+}
+```
+
+The client verifies `sha256` before extracting. A mismatch means the source
+changed after publication and the download is rejected.
+
+A version can be revoked without deleting its entry or changing its commit/hash:
+
+```json
+{
+	"revoked": ["1.0.0"]
+}
+```
+
+Revoked versions are skipped by ranges and `latest`; an exact pin fails with a
+clear error. Only the package owner or a repo admin may revoke a version, and
+only repo admins may un-revoke one. This is a content
+commitment in the registry, not an author signature: it protects against a
+changed or compromised source server as long as the registry entry itself is
+trusted. Author-key signatures require a separate key distribution and trust
+policy.
+
+## Migrations
+
+One-off data changes live in `scripts/` and are named `YYYY-MM-DD-<slug>.lua`
+so a directory listing is chronological. They are never run automatically.
+
+Run one through the **Run Migration** workflow (`workflow_dispatch`) with a
+`script` input such as `scripts/2026-11-07-add-sha256.lua`. Use `dry_run` first.
+The workflow validates the path, runs the script, runs `lde test`, and commits
+the resulting data changes.
+
+Scripts must be idempotent and support `--dry-run`; see
+[`scripts/README.md`](scripts/README.md).
+
 ## Automation
 
 ### Validation
 
-On creation of a package, the bot will ensure that your PR is valid by verifiying it fits the JSON schema, and that you aren't overwriting old versions.
+On creation of a package, the bot will ensure that your PR is valid by verifying it fits the JSON schema, and that you aren't overwriting old versions.
 
 If it fails, it will request changes with a list of errors.
 
 If there are no errors, it will be approved, and wait pending a maintainer accepting creation of a package. This part is not automatic as to avoid abuse, name-squatting, etc.
+
+### Automation implementation
+
+The automation is written in Lua and runs on [lde](https://lde.sh). Its modules live under `src/registry/` and the entry points under `src/`:
+
+```sh
+lde run src/generate-index.lua     # dist/index.json
+lde run src/check-pr.lua            # PR verdict (check-pr workflow)
+lde run src/record-metadata.lua     # owners, first published, last updated
+lde run src/namespace-request.lua   # namespace issues
+lde run src/backfill.lua            # one-off metadata migration
+lde test                            # automation test suite
+```
+
+Dependencies (`json`, `fs`, `path`, `process`) and the `lde-test` dev dependency are declared in `lde.json`; there is no Bun or Node toolchain anymore. Scripts use `process.exec` for `git` and `gh` (argument lists, never shell interpolation), and the `json` package for JSON.
 
 ### Ownership
 
@@ -68,7 +158,7 @@ Ownership lives in `authority.json`, which has two sections:
 - `top`: flat package name → list of owner GitHub ids.
 - `namespaces`: namespace name → list of owner GitHub ids. A namespaced package `ns/pkg` is owned by the owner of its namespace (`ns`), so claiming a namespace claims every package in it.
 
-Owners are stored as arrays (a package may have several), but the bot only ever writes a fresh single-owner array — adding additional owners is done by editing `authority.json` directly (admin only).
+Owners are stored as arrays (a package may have several). The bot only writes a fresh single-owner array when it records a new package. An existing owner can add co-owners through a pull request that only appends GitHub ids to keys they already own; the bot approves that PR and a maintainer merges it. Removing or reordering owners still requires a repo admin.
 
 Repo admins bypass this check and can obviously modify packages at will.
 
@@ -97,11 +187,11 @@ Only repo admins may edit `last-updated.json` directly. The bot keeps it current
 
 ### Backfilling
 
-Packages published before the metadata file existed have no recorded dates. `generator/src/backfill.ts` reconstructs them once from registry history — the commit that first added the portfile becomes `firstPublished`, the newest commit that touched it becomes `lastUpdated` — and flags each entry with `"backfilled": true` so the website can show them as estimates:
+Packages published before the metadata file existed have no recorded dates. `src/backfill.lua` reconstructs them once from registry history — the commit that first added the portfile becomes `firstPublished`, the newest commit that touched it becomes `lastUpdated` — and flags each entry with `"backfilled": true` so the website can show them as estimates:
 
 ```sh
-cd generator
-bun run backfill
+lde run src/backfill.lua
+lde run src/backfill.lua -- --force
 ```
 
 It leaves entries that were recorded live alone, so it is safe to re-run, and `--force` recomputes backfilled entries. Run it on a full clone: a shallow one would date everything to the tip commit.
@@ -115,19 +205,29 @@ Namespaces aren't claimed through package PRs — they're requested through an i
 1. **Schema**: every changed package JSON must validate against `schemas/registry.schema.json`, and the `name` field must match the path relative to `packages/` minus `.json` (see [Naming](#naming)).
 2. **Ownership**: modifying or deleting an existing package requires its owner (for `ns/pkg`, the namespace owner) or a repo admin. New packages are claimable by whoever submits them.
 3. **Versions**: updates may not modify or remove existing versions. Exactly one new version must be added.
-4. **`authority.json`**: only repo admins may edit it directly (it is normally maintained by the bot).
+4. **`authority.json`**: repo admins may edit it directly. An existing owner may add co-owners to a package or namespace they own; the PR must only append ids to those owner arrays, and a maintainer merges it.
 5. **`last-updated.json`**: only repo admins may edit it directly (it is maintained by the bot).
 6. **New packages are never auto-merged.** The bot approves them and a maintainer merges manually; the owner is recorded on `master` right after the merge.
 
 ### Self Hosting
 
-The workflows use `GITHUB_TOKEN` for reading, but approving, merging and pushing need a real user token. You must:
+The workflows authenticate with a **GitHub App** so the bot can comment, review, merge and push:
 
-1. **Create a dedicated bot account** (e.g. `lde-bot`) and add it as a repository collaborator with **write access**. Using a separate account matters: GitHub does not allow a user to approve their own pull request, so if the token belongs to the same account that opened the PR, the approve step fails. (The workflows tolerate that failure gracefully — the comment still posts and updates still merge — but the review stamp will be missing.)
-2. Create a [fine-grained personal access token](https://github.com/settings/personal-access-tokens/new) for the bot account (recommended), or a classic token with the `repo` scope.
-   - Fine-grained: repository access = this repo, permissions = **Contents: Read and write**, **Pull requests: Read and write**, **Issues: Read and write** (the namespace request workflow comments on and closes issues).
-3. Add it as an Actions secret named `REGISTRY_BOT_TOKEN` (Settings → Secrets and variables → Actions).
+1. **Create a GitHub App** (Settings → Developer settings → GitHub Apps) and install it on this repository.
+2. Grant it these repository permissions: **Contents: Read and write** (commits and the `dist` branch), **Pull requests: Read and write** (comments, reviews, merges), **Issues: Read and write** (namespace requests), and **Metadata: Read-only** (mandatory).
+3. Add the App id as an Actions **variable** named `REGISTRY_APP_ID`, and a private key as an Actions **secret** named `REGISTRY_APP_PRIVATE_KEY`.
 
-Without this secret, validation still runs, but the approve / request-changes / close / merge steps will fail.
+Each workflow mints a short-lived installation token with `actions/create-github-app-token@v2` and passes it as `GH_TOKEN` (and as the checkout token where a push is needed). Nothing is stored in the repository. `lde-org/setup-lde@v1` installs lde; the workflows no longer set up a JavaScript runtime or install JavaScript dependencies.
 
-Optional: `REGISTRY_BOT_NAME` and `REGISTRY_BOT_EMAIL` secrets override the author of the authority.json commit. By default the bot commits as the account behind `REGISTRY_BOT_TOKEN` (resolved from the token at runtime, using that account's noreply email so GitHub attributes the commit to it), falling back to `robolde` / `robolde@users.noreply.github.com`.
+### User login (OAuth App)
+
+The bot App is not used for user login: an installation token is scoped to the repositories the App is installed on, so it cannot write a contributor's fork. Create a separate **GitHub OAuth App** for users:
+
+1. Set the callback URL to `https://lde.sh/api/auth/callback` (add a local URL for development).
+2. Enable **Device flow** so `lde login` works from a terminal.
+3. Set `github.clientId` in `~/.lde/config.json` (or `LDE_GITHUB_CLIENT_ID`) to the OAuth App client ID. The CLI requests `public_repo offline_access`; no client secret is stored.
+4. Set `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` as Cloudflare secrets for the website (`wrangler secret put`). `REGISTRY_REPO`, `REGISTRY_BRANCH`, and `SITE_URL` are non-secret vars in `wrangler.jsonc`.
+
+`public_repo` lets a signed-in user create issues and pull requests and write their own fork, which is how contributors without write access publish. The website and CLI both require two-factor authentication on the GitHub account before writing.
+
+An installation token cannot call `GET /user`, so the bot's commits default to `robolde` / `robolde@users.noreply.github.com`. Set the optional `REGISTRY_BOT_NAME` and `REGISTRY_BOT_EMAIL` secrets to attribute them to a real account (for example a dedicated bot user's noreply address).
