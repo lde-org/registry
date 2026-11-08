@@ -220,7 +220,7 @@ The workflows authenticate with a **GitHub App** so the bot can comment, review,
 
 `check-pr.yml` uses `pull_request_target` because fork PRs need the App token to comment, review and merge. It checks out the base revision and only reads PR contents via `git show`; it never executes fork code. GitHub's default event policy blocks `pull_request_target` on public repositories after December 2, 2026, so allow `pull_request_target` in the repository or organization Actions event policy if this workflow should keep running.
 
-Each workflow mints a short-lived installation token with `actions/create-github-app-token@v3` and passes it as `GH_TOKEN` (and as the checkout token where a push is needed). Nothing is stored in the repository. `lde-org/setup-lde@v1` installs lde; the workflows no longer set up a JavaScript runtime or install JavaScript dependencies.
+Each workflow mints a short-lived installation token with `actions/create-github-app-token@v3` and passes it as `GH_TOKEN` (and as the checkout token where a push is needed). Nothing is stored in the repository. `lde-org/setup-lde@v2` installs lde; the workflows no longer set up a JavaScript runtime or install JavaScript dependencies.
 
 ### User login (OAuth App)
 

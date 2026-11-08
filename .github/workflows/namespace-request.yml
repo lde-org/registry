@@ -34,7 +34,7 @@ jobs:
                   fetch-depth: 0
                   token: ${{ steps.app.outputs.token }}
 
-            - uses: lde-org/setup-lde@v1
+            - uses: lde-org/setup-lde@v2
 
             - name: Handle namespace request
               env:

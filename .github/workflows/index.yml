@@ -24,7 +24,7 @@ jobs:
               with:
                   token: ${{ steps.app.outputs.token }}
 
-            - uses: lde-org/setup-lde@v1
+            - uses: lde-org/setup-lde@v2
 
             - name: Generate index.json
               run: lde run src/generate-index.lua
