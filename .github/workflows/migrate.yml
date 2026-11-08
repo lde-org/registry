@@ -25,16 +25,16 @@ concurrency:
 
 jobs:
     migrate:
-        runs-on: ubuntu-latest
+        runs-on: ubuntu-24.04
         steps:
             - name: Create GitHub App token
               id: app
-              uses: actions/create-github-app-token@v2
+              uses: actions/create-github-app-token@v3
               with:
                   app-id: ${{ vars.REGISTRY_APP_ID }}
                   private-key: ${{ secrets.REGISTRY_APP_PRIVATE_KEY }}
 
-            - uses: actions/checkout@v4
+            - uses: actions/checkout@v6
               with:
                   token: ${{ steps.app.outputs.token }}
                   fetch-depth: 0

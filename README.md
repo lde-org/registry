@@ -213,11 +213,14 @@ Namespaces aren't claimed through package PRs — they're requested through an i
 
 The workflows authenticate with a **GitHub App** so the bot can comment, review, merge and push:
 
-1. **Create a GitHub App** (Settings → Developer settings → GitHub Apps) and install it on this repository.
+1. **Create a GitHub App** (Settings → Developer settings → GitHub Apps).
 2. Grant it these repository permissions: **Contents: Read and write** (commits and the `dist` branch), **Pull requests: Read and write** (comments, reviews, merges), **Issues: Read and write** (namespace requests), and **Metadata: Read-only** (mandatory).
 3. Add the App id as an Actions **variable** named `REGISTRY_APP_ID`, and a private key as an Actions **secret** named `REGISTRY_APP_PRIVATE_KEY`.
+4. Install the App on `lde-org/registry`. If the App is installed on the organization with **Only select repositories**, add this repository explicitly. A token step that fails with `Not Found - .../get-a-repository-installation-for-the-authenticated-app` means the App is not installed on this repository, or the App id/private key belong to a different App.
 
-Each workflow mints a short-lived installation token with `actions/create-github-app-token@v2` and passes it as `GH_TOKEN` (and as the checkout token where a push is needed). Nothing is stored in the repository. `lde-org/setup-lde@v1` installs lde; the workflows no longer set up a JavaScript runtime or install JavaScript dependencies.
+`check-pr.yml` uses `pull_request_target` because fork PRs need the App token to comment, review and merge. It checks out the base revision and only reads PR contents via `git show`; it never executes fork code. GitHub's default event policy blocks `pull_request_target` on public repositories after December 2, 2026, so allow `pull_request_target` in the repository or organization Actions event policy if this workflow should keep running.
+
+Each workflow mints a short-lived installation token with `actions/create-github-app-token@v3` and passes it as `GH_TOKEN` (and as the checkout token where a push is needed). Nothing is stored in the repository. `lde-org/setup-lde@v1` installs lde; the workflows no longer set up a JavaScript runtime or install JavaScript dependencies.
 
 ### User login (OAuth App)
 
@@ -226,8 +229,8 @@ The bot App is not used for user login: an installation token is scoped to the r
 1. Set the callback URL to `https://lde.sh/api/auth/callback` (add a local URL for development).
 2. Enable **Device flow** so `lde login` works from a terminal.
 3. The CLI ships with the official OAuth App client ID, so users need no configuration. Override it with `github.clientId` in `~/.lde/config.json` (or `LDE_GITHUB_CLIENT_ID`) for a self-hosted app. The CLI requests `public_repo offline_access`; no client secret is stored.
-4. Set `GITHUB_CLIENT_SECRET` as a Cloudflare secret for the website (`wrangler secret put`). The client ID defaults to the official app; set `GITHUB_CLIENT_ID` only for a self-hosted app. `REGISTRY_REPO`, `REGISTRY_BRANCH`, and `SITE_URL` are non-secret vars in `wrangler.jsonc`.
+5. Set `GITHUB_CLIENT_SECRET` as a Cloudflare secret for the website (`wrangler secret put`). The client ID defaults to the official app; set `GITHUB_CLIENT_ID` only for a self-hosted app. `REGISTRY_REPO`, `REGISTRY_BRANCH`, and `SITE_URL` are non-secret vars in `wrangler.jsonc`.
 
-`public_repo` lets a signed-in user create issues and pull requests and write their own fork, which is how contributors without write access publish. The website and CLI both require two-factor authentication on the GitHub account before writing.
+`public_repo` lets a signed-in user create issues and pull requests and write their own fork, which is how contributors without write access publish.
 
 An installation token cannot call `GET /user`, so the bot's commits default to `robolde` / `robolde@users.noreply.github.com`. Set the optional `REGISTRY_BOT_NAME` and `REGISTRY_BOT_EMAIL` secrets to attribute them to a real account (for example a dedicated bot user's noreply address).
