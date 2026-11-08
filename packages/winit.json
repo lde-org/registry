@@ -62,6 +62,11 @@
 		"0.1.13": {
 			"commit": "fb4c603210d94c4d4af39dbc190396ad0ba4ae6a",
 			"sha256": "3782d5471ebf82a444d9ff0b1981351ae19f32f340df91b3c42de58df8ffac43"
+		},
+		"0.1.14": {
+			"commit": "d883a5af6aa2e212c3860e2b34d135c5f07bd847",
+			"git": "https://github.com/wfl-org/winit.git",
+			"sha256": "a430d93a967fe8e8337d963cdcb3a96852e6d9cb0458e979e56291b395067df1"
 		}
 	}
 }
