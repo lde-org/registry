@@ -7,9 +7,25 @@
 	"git": "https://codeberg.org/kmafeni04/sstream-lua.git",
 	"branch": "main",
 	"versions": {
-		"0.1.2": "383499688dbec7ba1ecc7d341887459ad76ea1f7",
-		"0.1.3": "ec24b21b6292250f853bfaa3a7a043f9dbef1414",
-		"0.1.4": "d03e6ecfc43693fce12239eb40cf7bfb61089099",
-		"0.1.5": "a841d0c04bdce243e758f2faccfbe2b257457eaa"
+		"0.1.2": {
+			"commit": "383499688dbec7ba1ecc7d341887459ad76ea1f7",
+			"sha256": "bcde4537f82c4346c974eb1bb3adf72cfdc5498c76b9f711f0d337d23ba70b5f"
+		},
+		"0.1.3": {
+			"commit": "ec24b21b6292250f853bfaa3a7a043f9dbef1414",
+			"sha256": "01641361d6a688640097686d560209c90b87572360c0a60b8f1daffa8daea4f5"
+		},
+		"0.1.4": {
+			"commit": "d03e6ecfc43693fce12239eb40cf7bfb61089099",
+			"sha256": "fc343197109ab824c5b971aafed74cf6a71044cf23bb35a23d2f861af33c5cbd"
+		},
+		"0.1.5": {
+			"commit": "a841d0c04bdce243e758f2faccfbe2b257457eaa",
+			"sha256": "6064ac1e39d504c29e05fe87483d74bf1905ee8ec81bf64bab8a10b4e34195f7"
+		},
+		"0.1.6": {
+			"commit": "8755e8682b2e51f5417d2f9f1e4c5dd817982fb1",
+			"sha256": "1fda762803e517ec00d902fecb0959f5cce48a322e50289fb42dcf0e0915e86a"
+		}
 	}
 }
