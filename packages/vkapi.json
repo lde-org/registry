@@ -7,8 +7,17 @@
 	"git": "https://github.com/bycruz/vkapi.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "0b126912fa5ca091c940e575ecde295a3bb78429",
-		"0.1.1": "1d19f1a320ff83bfe33d20151c7d14e0472155c2",
-		"0.1.2": "e28887253153f64da406fd17b4786aa5eb1cc500"
+		"0.1.0": {
+			"commit": "0b126912fa5ca091c940e575ecde295a3bb78429",
+			"sha256": "5673fcb63ec5b3efddedb15ce6575a9be7eeb9588c4e3dc2a886eca802982bac"
+		},
+		"0.1.1": {
+			"commit": "1d19f1a320ff83bfe33d20151c7d14e0472155c2",
+			"sha256": "5017d2504f08923ed1faac72308043b88578b7b9c3f0595d70e2e6568120f011"
+		},
+		"0.1.2": {
+			"commit": "e28887253153f64da406fd17b4786aa5eb1cc500",
+			"sha256": "7c0744a53a344b3177afbf7801b68b3599e64bf33822655856cea8a182616a80"
+		}
 	}
 }

@@ -7,9 +7,57 @@
 	"git": "https://github.com/bycruz/wonderland.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "ecf5484980888bb58d9f8df890f496c4d1539535",
-		"0.1.1": "f505f11a423767b2125afda93eba327c78712d60",
-		"0.1.2": "dc60cbd72c4cb486304279692abfa88f88ffa714",
-		"0.1.3": "9202ec1449c03cf3c92df37d2ff96874b4f231d2"
+		"0.1.0": {
+			"commit": "ecf5484980888bb58d9f8df890f496c4d1539535",
+			"sha256": "9bffe4721a0392c226a053a1cbb26c8a804fc585d9f6d60684dbf622217c7eef"
+		},
+		"0.1.1": {
+			"commit": "f505f11a423767b2125afda93eba327c78712d60",
+			"sha256": "31faedbf630dc32e414043a507d7b22f83cac378856541628df3835346a99eda"
+		},
+		"0.1.2": {
+			"commit": "dc60cbd72c4cb486304279692abfa88f88ffa714",
+			"sha256": "59dfce3281e05d7e19c2b5f47fcc3046668bca390c5d6c8505aefda1c3f332b7"
+		},
+		"0.1.3": {
+			"commit": "9202ec1449c03cf3c92df37d2ff96874b4f231d2",
+			"sha256": "04ceaeffcf4d6ce21f634b7ced2d914182f40267526eef7629c48cbcf835e758"
+		},
+		"0.1.4": {
+			"commit": "df07ea1e8a845cb9a1e5811370ec77849f3bce4a",
+			"sha256": "a6f59d2e2f776b8f073ee53f12054627c49c58aa913df9bc048a18d911dd58d6"
+		},
+		"0.1.5": {
+			"commit": "5c57c7787d79a598c6c5ed80f9c53874d239d850",
+			"sha256": "f827c2977e966ac8c21ebc45fcc65ae837c62bc85a9d527bbf7bbd7411436342"
+		},
+		"0.1.6": {
+			"commit": "2f9997be8ca33e4c11a6241c68c7efec5e161799",
+			"sha256": "b61cb530889956dbaab983bbe5ee459e9502d39bc4c8b9d46d9686a44b0038a9"
+		},
+		"0.1.7": {
+			"commit": "5857bca5d414cee76a882bad0cccfa64badbf15f",
+			"sha256": "8c3d5dcd2e35de040e59f6fa9bcf9072c91e310cef2dbb03c308b4ea721bc0be"
+		},
+		"0.1.8": {
+			"commit": "90fd95bb6229a2a52ece0cb101123ce3174a877c",
+			"sha256": "b3bae2685b02a11d22a9e9ab23c052ec8ad5c108ce1197a6d98fa53c581cdcb6"
+		},
+		"0.1.9": {
+			"commit": "9451725d1f402b27b9eac94d269004100c8ae2b5",
+			"sha256": "e493e05983854381e7b48c49076040e59cfea84edea76b56c61febe0b5aee5c5"
+		},
+		"0.1.10": {
+			"commit": "14bd73f8bde538fb5bff8ef624379f0a09c47d6a",
+			"sha256": "212456ee242c9ae47467093ac72f336a6ec03742cb63801c0c3beeb2ac4fd657"
+		}
+	},
+	"dependencies": {
+		"fs": "^0.3.1",
+		"hood": "0.2",
+		"image": "0.1",
+		"texter": "0.1",
+		"utf8": "^0.1.0",
+		"winit": "0.1"
 	}
 }

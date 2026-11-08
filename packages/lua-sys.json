@@ -7,11 +7,29 @@
 	"git": "https://github.com/lde-org/lua-sys.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "9246e262d0388a744ebe2aa838fdf8a552d67755",
-		"0.1.1": "3a9a1b1f2b18ca9cd029b66ae8935a60c208695b",
-		"0.1.2": "0b9985bc6b23f51bc7a27f6b1c5ac390d14e20eb",
-		"0.1.3": "1fcf706087f4ea7b9dced8a483315d2a02393576",
-		"0.1.4": "e5c76eab9ca44ca906e05b8749809372beac05e1",
-		"0.1.5": "25be5bc41aa0f5f484bd7a3ac7311ae4f1dd01a0"
+		"0.1.0": {
+			"commit": "9246e262d0388a744ebe2aa838fdf8a552d67755",
+			"sha256": "aa5fa5b3c3f52d7f840df497b92798013ef8497bae2735731916a336e4499fef"
+		},
+		"0.1.1": {
+			"commit": "3a9a1b1f2b18ca9cd029b66ae8935a60c208695b",
+			"sha256": "b794386f0b2f0a8d51466a156d3afe41471184b868d12a878eca9741b48ebd6f"
+		},
+		"0.1.2": {
+			"commit": "0b9985bc6b23f51bc7a27f6b1c5ac390d14e20eb",
+			"sha256": "c5c70e0dbf0d7bfe3f7ab98d4810aa421e2003eca02d4a0d8610f7eb7993bf20"
+		},
+		"0.1.3": {
+			"commit": "1fcf706087f4ea7b9dced8a483315d2a02393576",
+			"sha256": "dab5d4775e2e7460da267ecf8734bed9d1be0c88d826ff377fbbae357d15f3be"
+		},
+		"0.1.4": {
+			"commit": "e5c76eab9ca44ca906e05b8749809372beac05e1",
+			"sha256": "86db019b95712832fcf975d2a0f155dc6f68444967d29710d9e1e86af1b71139"
+		},
+		"0.1.5": {
+			"commit": "25be5bc41aa0f5f484bd7a3ac7311ae4f1dd01a0",
+			"sha256": "2da04c073de00731da20105d7271cd64d35e1bf2b91e20a1d499650661a3a6af"
+		}
 	}
 }

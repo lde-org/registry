@@ -7,11 +7,33 @@
 	"git": "https://codeberg.org/kmafeni04/targs.git",
 	"branch": "main",
 	"versions": {
-		"0.4.0": "0467aa3fa40ccbf3af55392ea135401e4e4a990e",
-		"0.4.1": "553e3e866a60253c4c204bc707b8198f90cc3d48",
-		"0.4.2": "5f2f43ac32ed70cd1b3fabb99be05701b4001a89",
-		"0.4.3": "0fb510b8e78cadfb429d87687641391dc6a17d9a",
-		"0.4.4": "4923bd00596b2f389f3c130fb96f3a91f29d6d58",
-		"0.4.5": "3d71275b005c7df0867fe170003ee19c0fb2b887"
+		"0.4.0": {
+			"commit": "0467aa3fa40ccbf3af55392ea135401e4e4a990e",
+			"sha256": "5118b7bd974962a88411595b890d39f874a661e35b89600af46274950eb066c5"
+		},
+		"0.4.1": {
+			"commit": "553e3e866a60253c4c204bc707b8198f90cc3d48",
+			"sha256": "85d1e75ca641e65492f5e4f22079bb79cac734c9d9b1f43f58a272decb28d0ea"
+		},
+		"0.4.2": {
+			"commit": "5f2f43ac32ed70cd1b3fabb99be05701b4001a89",
+			"sha256": "a0f7ea5316352e07ec2338cd3584f7b54aa771b648f5b128eef28bdb741cf161"
+		},
+		"0.4.3": {
+			"commit": "0fb510b8e78cadfb429d87687641391dc6a17d9a",
+			"sha256": "c5386ec14605480d595469d30d57d8351e0a08cea45bc4980e4ab199ce1d0367"
+		},
+		"0.4.4": {
+			"commit": "4923bd00596b2f389f3c130fb96f3a91f29d6d58",
+			"sha256": "9a86c2ff40720d8fd41607c0e1ae5c9c98159f477212714500c2e0d3cb38784a"
+		},
+		"0.4.5": {
+			"commit": "3d71275b005c7df0867fe170003ee19c0fb2b887",
+			"sha256": "53eadb346725e23ef9bf1330c09bbf67104edfd9e797ed5c131ffd19cb37f296"
+		},
+		"0.5.0": {
+			"commit": "47bc65aa4dabbcc2c993813a74fcbd9701927881",
+			"sha256": "02cf23d7001cb317559cbe25d21a15195b72834c808f9cf99236898c4b7b0852"
+		}
 	}
 }

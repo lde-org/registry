@@ -7,7 +7,13 @@
 	"git": "https://github.com/lde-org/git2-sys.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "4102ab000b23d270a43fef36abae599f8283b57d",
-		"0.2.0": "ce2e2528cc54034bbf342dac96c4c2bac6815da4"
+		"0.1.0": {
+			"commit": "4102ab000b23d270a43fef36abae599f8283b57d",
+			"sha256": "1562f453f28fa71ecaaaa681d31e2af0b2018e824d5a080c4cd923283575dee7"
+		},
+		"0.2.0": {
+			"commit": "ce2e2528cc54034bbf342dac96c4c2bac6815da4",
+			"sha256": "de37acffc38f43a993c4c60ba14d554bf5e2c1d85115ca3ba0cb06783b0fe273"
+		}
 	}
 }

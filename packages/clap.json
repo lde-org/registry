@@ -7,6 +7,9 @@
 	"git": "https://github.com/lde-org/clap.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "55ddeec2c812c7410553a6af8345614a36eef459"
+		"0.1.0": {
+			"commit": "55ddeec2c812c7410553a6af8345614a36eef459",
+			"sha256": "2466c2b174e5ec93f7cb2b6f2764ed7e436dec7e0cd1b3ad36b7dee7ce7ee54a"
+		}
 	}
 }

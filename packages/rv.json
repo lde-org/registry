@@ -7,6 +7,9 @@
 	"git": "https://github.com/bycruz/revolver.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "b0c41af126701bf2811c9c7eb43aeb3d5c6b9530"
+		"0.1.0": {
+			"commit": "b0c41af126701bf2811c9c7eb43aeb3d5c6b9530",
+			"sha256": "3b61e30d1ec37c1581b7c5aba97eea4bf4caeca28445b9c9dfa24b11bfd29de4"
+		}
 	}
 }

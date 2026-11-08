@@ -20,22 +20,27 @@ jobs:
             (github.event_name == 'issues' && contains(github.event.issue.body, '/request-namespace')) ||
             (github.event_name == 'issue_comment' &&
              (contains(github.event.comment.body, '!approve') || contains(github.event.comment.body, '@robolde')))
-        runs-on: ubuntu-latest
+        runs-on: ubuntu-24.04
         steps:
-            - uses: actions/checkout@v4
+            - name: Create GitHub App token
+              id: app
+              uses: actions/create-github-app-token@v3
+              with:
+                  client-id: ${{ vars.REGISTRY_APP_CLIENT_ID || vars.REGISTRY_APP_ID }}
+                  private-key: ${{ secrets.REGISTRY_APP_PRIVATE_KEY }}
+
+            - uses: actions/checkout@v6
               with:
                   fetch-depth: 0
+                  token: ${{ steps.app.outputs.token }}
 
-            - uses: oven-sh/setup-bun@v2
-
-            - name: Install dependencies
-              working-directory: generator
-              run: bun install
+            - uses: lde-org/setup-lde@v2
+              with:
+                  version: nightly
 
             - name: Handle namespace request
-              working-directory: generator
               env:
-                  GH_TOKEN: ${{ secrets.REGISTRY_BOT_TOKEN }}
+                  GH_TOKEN: ${{ steps.app.outputs.token }}
                   EVENT: ${{ github.event_name }}
                   REPO: ${{ github.repository }}
                   ISSUE_NUMBER: ${{ github.event.issue.number }}
@@ -45,5 +50,6 @@ jobs:
                   COMMENT_BODY: ${{ github.event.comment.body }}
                   COMMENT_AUTHOR_LOGIN: ${{ github.event.comment.user.login }}
                   COMMENT_AUTHOR_ASSOCIATION: ${{ github.event.comment.author_association }}
-              run: |
-                  bun ./src/namespace-request.ts
+                  BOT_NAME: ${{ secrets.REGISTRY_BOT_NAME }}
+                  BOT_EMAIL: ${{ secrets.REGISTRY_BOT_EMAIL }}
+              run: lde run src/namespace-request.lua

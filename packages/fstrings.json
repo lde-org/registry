@@ -7,6 +7,13 @@
 	"git": "https://codeberg.org/kmafeni04/fstrings-lua.git",
 	"branch": "main",
 	"versions": {
-		"0.1.1": "86cae053f453ab52b38f74342277ddbb4305fd36"
+		"0.1.1": {
+			"commit": "86cae053f453ab52b38f74342277ddbb4305fd36",
+			"sha256": "ff9dba6460bf39d843109a12cda222730b17bebdd316f04d7febe9ec271102f2"
+		},
+		"0.2.0": {
+			"commit": "05805a1ad28bf4e7b295a4d8e12be2fe1e6a9563",
+			"sha256": "6869f8457f2cb6167fe0927157ca9afc57dd28aa2c2a9e90f80fc2c7ee2071f9"
+		}
 	}
 }

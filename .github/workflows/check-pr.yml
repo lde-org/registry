@@ -1,5 +1,7 @@
 name: Check PR
 
+# Requires an Actions event policy that explicitly allows pull_request_target
+# after GitHub enforces the default block on 2026-12-02.
 on:
     pull_request_target:
         types: [opened, synchronize, reopened]
@@ -17,28 +19,35 @@ concurrency:
 
 jobs:
     check:
-        runs-on: ubuntu-latest
+        runs-on: ubuntu-24.04
         steps:
+            - name: Create GitHub App token
+              id: app
+              uses: actions/create-github-app-token@v3
+              with:
+                  client-id: ${{ vars.REGISTRY_APP_CLIENT_ID || vars.REGISTRY_APP_ID }}
+                  private-key: ${{ secrets.REGISTRY_APP_PRIVATE_KEY }}
+
             # pull_request_target runs in the base repo context (so secrets are
             # available even for fork PRs). We check out the BASE revision and
-            # only read PR contents via git show — never run PR code.
-            - uses: actions/checkout@v4
+            # only read PR contents via `git show` — never execute PR code.
+            - uses: actions/checkout@v6
               with:
                   ref: ${{ github.event.pull_request.base.sha }}
                   fetch-depth: 0
+                  token: ${{ steps.app.outputs.token }}
+
+            - uses: lde-org/setup-lde@v2
+              with:
+                  version: nightly
 
             - name: Fetch PR head
-              run: git fetch origin refs/pull/${{ github.event.pull_request.number }}/head
-
-            - uses: oven-sh/setup-bun@v2
-
-            - name: Install dependencies
-              working-directory: generator
-              run: bun install
+              env:
+                  PR_NUMBER: ${{ github.event.pull_request.number }}
+              run: git fetch origin "refs/pull/${PR_NUMBER}/head"
 
             - name: Run check
               id: check
-              working-directory: generator
               env:
                   BASE_SHA: ${{ github.event.pull_request.base.sha }}
                   HEAD_SHA: ${{ github.event.pull_request.head.sha }}
@@ -46,43 +55,45 @@ jobs:
                   PR_AUTHOR_LOGIN: ${{ github.event.pull_request.user.login }}
                   PR_AUTHOR_ASSOCIATION: ${{ github.event.pull_request.author_association }}
                   REPO: ${{ github.repository }}
-                  GH_TOKEN: ${{ secrets.REGISTRY_BOT_TOKEN }}
-              run: |
-                  bun ./src/check-pr.ts > "$RUNNER_TEMP/check-result.json"
-                  echo "verdict=$(jq -r .verdict "$RUNNER_TEMP/check-result.json")" >> "$GITHUB_OUTPUT"
-                  jq -r .comment "$RUNNER_TEMP/check-result.json" > "$RUNNER_TEMP/comment.md"
+                  GH_TOKEN: ${{ steps.app.outputs.token }}
+                  COMMENT_FILE: ${{ runner.temp }}/comment.md
+              run: lde run src/check-pr.lua
 
             - name: Close rejected PR
               if: steps.check.outputs.verdict == 'close'
               env:
-                  GH_TOKEN: ${{ secrets.REGISTRY_BOT_TOKEN }}
+                  GH_TOKEN: ${{ steps.app.outputs.token }}
+                  PR_NUMBER: ${{ github.event.pull_request.number }}
               run: |
-                  gh pr comment "${{ github.event.pull_request.number }}" --body-file "$RUNNER_TEMP/comment.md"
-                  gh pr close "${{ github.event.pull_request.number }}"
+                  gh pr comment "$PR_NUMBER" --body-file "$RUNNER_TEMP/comment.md"
+                  gh pr close "$PR_NUMBER"
 
             - name: Request changes
               if: steps.check.outputs.verdict == 'request-changes'
               env:
-                  GH_TOKEN: ${{ secrets.REGISTRY_BOT_TOKEN }}
+                  GH_TOKEN: ${{ steps.app.outputs.token }}
+                  PR_NUMBER: ${{ github.event.pull_request.number }}
               run: |
-                  gh pr comment "${{ github.event.pull_request.number }}" --body-file "$RUNNER_TEMP/comment.md"
+                  gh pr comment "$PR_NUMBER" --body-file "$RUNNER_TEMP/comment.md"
                   # GitHub forbids reviewing your own PR; the comment above always
                   # carries the errors, so a self-review failure is not fatal.
-                  gh pr review "${{ github.event.pull_request.number }}" --request-changes --body "Changes requested automatically - see comment above." || true
+                  gh pr review "$PR_NUMBER" --request-changes --body "Changes requested automatically - see comment above." || true
 
             - name: Approve new package
               if: steps.check.outputs.verdict == 'approve'
               env:
-                  GH_TOKEN: ${{ secrets.REGISTRY_BOT_TOKEN }}
+                  GH_TOKEN: ${{ steps.app.outputs.token }}
+                  PR_NUMBER: ${{ github.event.pull_request.number }}
               run: |
-                  gh pr comment "${{ github.event.pull_request.number }}" --body-file "$RUNNER_TEMP/comment.md"
-                  gh pr review "${{ github.event.pull_request.number }}" --approve --body "Approved automatically - see comment above." || true
+                  gh pr comment "$PR_NUMBER" --body-file "$RUNNER_TEMP/comment.md"
+                  gh pr review "$PR_NUMBER" --approve --body "Approved automatically - see comment above." || true
 
             - name: Approve and merge update
               if: steps.check.outputs.verdict == 'approve-merge'
               env:
-                  GH_TOKEN: ${{ secrets.REGISTRY_BOT_TOKEN }}
+                  GH_TOKEN: ${{ steps.app.outputs.token }}
+                  PR_NUMBER: ${{ github.event.pull_request.number }}
               run: |
-                  gh pr comment "${{ github.event.pull_request.number }}" --body-file "$RUNNER_TEMP/comment.md"
-                  gh pr review "${{ github.event.pull_request.number }}" --approve --body "Approved automatically - see comment above." || true
-                  gh pr merge "${{ github.event.pull_request.number }}" --auto --merge
+                  gh pr comment "$PR_NUMBER" --body-file "$RUNNER_TEMP/comment.md"
+                  gh pr review "$PR_NUMBER" --approve --body "Approved automatically - see comment above." || true
+                  gh pr merge "$PR_NUMBER" --auto --merge

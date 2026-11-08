@@ -7,13 +7,66 @@
 	"git": "https://github.com/bycruz/winit.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "6ce1cd53c4b511f07e7c78cd2639d0107dfed56e",
-		"0.1.1": "98ba6881f83daa554472597d593c14908496bd14",
-		"0.1.2": "c271f4458616bc842590e1a46364a046205383c9",
-		"0.1.3": "4aa5eb194f1a2a377b971f29479943985c5f025b",
-		"0.1.4": "7675d88c063478a5e4423c2e7ec9ad4f2d02390a",
-		"0.1.5": "159fc8aada8a362d809e891a50e867cc21ea710d",
-		"0.1.6": "434b0a1ce0fd6fca2cebb72b2f9c5b5a6dce0d73",
-		"0.1.7": "2e6d87ff192c877424dca4a102b09c8c29e3ac26"
+		"0.1.0": {
+			"commit": "6ce1cd53c4b511f07e7c78cd2639d0107dfed56e",
+			"sha256": "b2875e1b9bb6c24213169699f2460b5a1b0fe4a9b1ad003c4e9f137cfc594a50"
+		},
+		"0.1.1": {
+			"commit": "98ba6881f83daa554472597d593c14908496bd14",
+			"sha256": "7fab7c6924c76700b9927638e1df62aa9e38a2869207b3572f2aaf659c1dc346"
+		},
+		"0.1.2": {
+			"commit": "c271f4458616bc842590e1a46364a046205383c9",
+			"sha256": "48c812aef1d844d5652fb3c44059848ca747f7b7d7e945d65ae11e2fcbbcf2d9"
+		},
+		"0.1.3": {
+			"commit": "4aa5eb194f1a2a377b971f29479943985c5f025b",
+			"sha256": "907b06b38e4642a4845327fdc5d98a60acdb954cd4a4e59829c47b7de74703ee"
+		},
+		"0.1.4": {
+			"commit": "7675d88c063478a5e4423c2e7ec9ad4f2d02390a",
+			"sha256": "061abfa6b3c870637237142ff4acecfa1781e14f441cc348d1bfe338da1ec30c"
+		},
+		"0.1.5": {
+			"commit": "159fc8aada8a362d809e891a50e867cc21ea710d",
+			"sha256": "d2b4db5788557febe09ec6598b77a533d02f8f7479126aba95565d8d588242d4"
+		},
+		"0.1.6": {
+			"commit": "434b0a1ce0fd6fca2cebb72b2f9c5b5a6dce0d73",
+			"sha256": "ab647dbdd992d3dc8f3779b6030dd01695841e568a77af744aecf39ed93460af"
+		},
+		"0.1.7": {
+			"commit": "2e6d87ff192c877424dca4a102b09c8c29e3ac26",
+			"sha256": "068790a71e50b2ec47e636f79aa7d97eba2e200347207d5cb30ff38517aa6101"
+		},
+		"0.1.8": {
+			"commit": "ac14546e20e6368ee982f9912df5b2003fb648db",
+			"sha256": "1bfc3eb7f9e5bb7d01719af807146cf4782ad24258490158a35d74e05e145c7f"
+		},
+		"0.1.9": {
+			"commit": "05ad361431a767d2c02be7b2cc9f30553af8893c",
+			"sha256": "c2fbe11e7473baff8ea7fe7ecd0577981207d6758e2d7667bbece92f8080901d"
+		},
+		"0.1.10": {
+			"commit": "1b543e4bbc7ba123ed7d5797c80e8c1fe863259d",
+			"sha256": "580bd4cd2db44d95a484b971b835c634a3a9988839fcc85033645718ee798be3"
+		},
+		"0.1.11": {
+			"commit": "33893005f649420eb027a8a4d9fcd0343495e1ff",
+			"sha256": "8d54da82f7da48b404dd8601189ad29498baa269b498f7fb75b8f438b713b916"
+		},
+		"0.1.12": {
+			"commit": "de91e3d7b3bcb39520a06e6df1e5b86f069c1b9a",
+			"sha256": "83522b772d33b14ed61a4782f70ece453210fbc9ad153f92b9f85a55a8601d71"
+		},
+		"0.1.13": {
+			"commit": "fb4c603210d94c4d4af39dbc190396ad0ba4ae6a",
+			"sha256": "3782d5471ebf82a444d9ff0b1981351ae19f32f340df91b3c42de58df8ffac43"
+		},
+		"0.1.14": {
+			"commit": "d883a5af6aa2e212c3860e2b34d135c5f07bd847",
+			"git": "https://github.com/wfl-org/winit.git",
+			"sha256": "a430d93a967fe8e8337d963cdcb3a96852e6d9cb0458e979e56291b395067df1"
+		}
 	}
 }

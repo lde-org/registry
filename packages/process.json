@@ -7,8 +7,17 @@
 	"git": "https://github.com/lde-org/process.git",
 	"branch": "master",
 	"versions": {
-		"0.1.0": "fd521a4e7df864a4f17e79e8485991c0a3eddc77",
-		"0.1.1": "663eaa993131750081f544df4e50a125ea4970ef",
-		"0.1.2": "f904b26919ad0d09adacb839a2803848d997ee92"
+		"0.1.0": {
+			"commit": "fd521a4e7df864a4f17e79e8485991c0a3eddc77",
+			"sha256": "40d779baf306d0e1fdf53c345a5f50bad9ad48d0946b08bfb3833050bc9de6c4"
+		},
+		"0.1.1": {
+			"commit": "663eaa993131750081f544df4e50a125ea4970ef",
+			"sha256": "3b85bd0e914e8643e67dc8c35a41d956e8c8a8a959c42739904b9f42c9650399"
+		},
+		"0.1.2": {
+			"commit": "f904b26919ad0d09adacb839a2803848d997ee92",
+			"sha256": "72422b9b3b1a34fcc2674a518d86490e8bdd05e3613ba8a1935b8571d68eb755"
+		}
 	}
 }
