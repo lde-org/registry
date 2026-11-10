@@ -34,6 +34,15 @@
 		"0.3.4": {
 			"commit": "63b84bb3dafe709fe1a074c5a3084814473110cd",
 			"sha256": "97a33856400d4570e7b846514f0bd407ef2ae82a51b00ed7ea13c5404918efce"
+		},
+		"0.3.5": {
+			"commit": "ecd39e4171937b488a92a173589d9fe407449366",
+			"sha256": "f6f2ff5db6f274863bef0c91f17ef89abf19f63f44edc6f60aeed8c6f6e9549a"
 		}
+	},
+	"dependencies": {
+		"ansicolor": "0.4.0",
+		"json": "^0.1.1",
+		"sstream": "0.1.5"
 	}
 }
