@@ -50,6 +50,10 @@
 		"0.4.1": {
 			"commit": "308e1a7d31207bd7308899fb89c16aa7a40a48bd",
 			"sha256": "1d7aadeb40f3b0c15737c208c5a55f434f430b3b50cba06efc65376880b61d23"
+		},
+		"0.4.2": {
+			"commit": "ddc2c46651c9142efbc895ddf42318f9f6f419d1",
+			"sha256": "e5c3432c0822b80c52b265159f88f5f1c5867a18d284197d32049f0fcf1e795f"
 		}
 	},
 	"dependencies": {
