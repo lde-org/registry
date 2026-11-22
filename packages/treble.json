@@ -45,6 +45,11 @@
 			"commit": "93fd61fdbf80feacc526dd439b471bab33dc5e0f",
 			"git": "https://github.com/beat-player/treble.git",
 			"sha256": "2a2c934bbd3fb92c8f22c7b22b97f7491e9604a2fa9d326873d0c382e7dd0e0b"
+		},
+		"0.2.7": {
+			"commit": "1c88f58ca798a1d4b8f9f0c3a800699ded5a41b5",
+			"git": "https://github.com/beat-player/treble.git",
+			"sha256": "e78fcb1d32b4cd072899dec8e562032b0004a98007261c3334f96dbc46a24d44"
 		}
 	},
 	"revoked": [
