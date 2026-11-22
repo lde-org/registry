@@ -78,6 +78,10 @@
 		"0.1.17": {
 			"commit": "eb1f6cbb4886d986bd6a589315c0d461a2501187",
 			"sha256": "4d4da4f005272424c3afb6e0d79138b0c629951f60519dc565b97fbd955acfef"
+		},
+		"0.1.18": {
+			"commit": "45520cc912534d55b4b5556ae607f6778f92dc02",
+			"sha256": "94339018ba310c6bb2621fea1df0fc2d40db86b443c14a4d5ef58464b741cf89"
 		}
 	},
 	"dependencies": {
@@ -86,6 +90,6 @@
 		"image": "^0.1",
 		"texter": "^0.1.9",
 		"utf8": "^0.1.0",
-		"winit": "^0.1.19"
+		"winit": "^0.1.21"
 	}
 }
