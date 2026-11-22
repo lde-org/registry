@@ -7,6 +7,10 @@
 		"0.2.0": {
 			"commit": "a6b88c9d111b62fed389a9b61b6e6e7bc83c7df8",
 			"sha256": "07006166de4972d1788beac9b93a582e136f7bbde057a470c702c9c18a4d698d"
+		},
+		"0.2.1": {
+			"commit": "6f17d5f62a75a36ded76bad4afaba94bedd15561",
+			"sha256": "a634e2fd0c2e5fa6ef3846dac8944259ddebabd2fc92b2ecd8e50969685bc0d7"
 		}
 	}
 }
