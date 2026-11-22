@@ -1,0 +1,12 @@
+{
+	"name": "threading",
+	"description": "Threads for LuaJIT: functions run on threads of their own, in Lua states of their own",
+	"git": "https://github.com/lde-org/threading.git",
+	"branch": "master",
+	"versions": {
+		"0.2.0": {
+			"commit": "a6b88c9d111b62fed389a9b61b6e6e7bc83c7df8",
+			"sha256": "07006166de4972d1788beac9b93a582e136f7bbde057a470c702c9c18a4d698d"
+		}
+	}
+}
