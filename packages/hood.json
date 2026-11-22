@@ -62,6 +62,10 @@
 		"0.2.9": {
 			"commit": "e3403d767b240f322b7bf04ba57d3e397f676db4",
 			"sha256": "0336dab9421716034d81889edf8d8cc5806aefb52389e1594aaf4b40d61cf082"
+		},
+		"0.2.10": {
+			"commit": "193858a479252469deb1a7938f8e4d9ee53bea74",
+			"sha256": "f837f8ced22a7fbd46d72b8cadbc42c31fc88420c8f04571774bdb82b95458e5"
 		}
 	}
 }
