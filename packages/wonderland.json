@@ -66,14 +66,18 @@
 		"0.1.14": {
 			"commit": "2ecbcd5375598001d404ac1e4c70ec8a55c65754",
 			"sha256": "5625710d42147b2d5c06b83afe57e291151ddbaf9dc188595734eeb59497cebf"
+		},
+		"0.1.15": {
+			"commit": "1d1e8c3383bea54a45bb18fa009e4bb720f9d5d8",
+			"sha256": "ad6d03fdcade12b3745ff824ec2bcfa26047fe4ba34aed5574b477a9ddb754d1"
 		}
 	},
 	"dependencies": {
 		"fs": "^0.3.1",
-		"hood": "^0.2.10",
+		"hood": "^0.2.11",
 		"image": "^0.1",
 		"texter": "^0.1.8",
 		"utf8": "^0.1.0",
-		"winit": "^0.1.16"
+		"winit": "^0.1.18"
 	}
 }
