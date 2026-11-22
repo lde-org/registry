@@ -1,0 +1,15 @@
+{
+	"name": "androidapi",
+	"description": "Raw Android NDK bindings for LuaJIT",
+	"authors": [
+		"David Cruz <david@bycruz.dev>"
+	],
+	"git": "https://github.com/wfl-org/androidapi.git",
+	"branch": "master",
+	"versions": {
+		"0.1.0": {
+			"commit": "f33364602eed536b68edc3f9bfcccc3b292034de",
+			"sha256": "69591df73f8d1d53424ee8474e9f121049d5815bdf2d2bbda4b4ce1f9f36a3f6"
+		}
+	}
+}
