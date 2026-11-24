@@ -86,11 +86,15 @@
 		"0.1.19": {
 			"commit": "13530ba78ae60fd093619dcfa104b208e903752c",
 			"sha256": "3e451e408d044e238f7c6528cbc128bc9e3f922fd47d54419749b622e45a358e"
+		},
+		"0.1.20": {
+			"commit": "93f214829792b7a4fd7f3ebccfba64587cb79564",
+			"sha256": "28b8df0ca94ed9f221b0f748b5bec663f3addc5c3231b3d092ba3803be0116ef"
 		}
 	},
 	"dependencies": {
 		"fs": "^0.3.1",
-		"hood": "^0.2.14",
+		"hood": "^0.2.15",
 		"image": "^0.1",
 		"texter": "^0.1.9",
 		"utf8": "^0.1.0",
