@@ -11,6 +11,10 @@
 		"0.2.1": {
 			"commit": "6f17d5f62a75a36ded76bad4afaba94bedd15561",
 			"sha256": "a634e2fd0c2e5fa6ef3846dac8944259ddebabd2fc92b2ecd8e50969685bc0d7"
+		},
+		"0.2.2": {
+			"commit": "3a5501535c4fc16ee75e9515d71c363355543102",
+			"sha256": "bbf972b40f5d0426c017a1e85537f1803b92e02a184c2ce50355027c5f9f3ccb"
 		}
 	}
 }
