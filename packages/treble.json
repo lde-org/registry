@@ -60,6 +60,11 @@
 			"commit": "50eb3ca636c4cffbf6afc5acf9bfa47b90d53b08",
 			"git": "https://github.com/beat-player/treble.git",
 			"sha256": "8df4803a1c945ec69d5292bf59d1335d3098597ac503ab10476e3f9b4fb9a305"
+		},
+		"0.2.11": {
+			"commit": "8a5e603ead3ef6b244517e4b2b7d313134b5d587",
+			"git": "https://github.com/beat-player/treble.git",
+			"sha256": "a50f00c546300dc43d63a09bf9629f7de96c714495c32b4b159acc583ed71d4b"
 		}
 	},
 	"revoked": [
