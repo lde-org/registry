@@ -90,6 +90,10 @@
 		"0.2.16": {
 			"commit": "12d3cf31951414e3b0fad85bc68e72af56d5dbcc",
 			"sha256": "c14973c814b43f029c49ad2dceaf1e8c0d61872ccf2a9f7634493a8c6795d4e1"
+		},
+		"0.2.17": {
+			"commit": "fdf18ee556ce1dcd269a8d33ec7394b037f5e071",
+			"sha256": "a44e32909ba7e9f449c8f2c491acbab9a8892a49efe6a24c9fe810581457dc03"
 		}
 	}
 }
